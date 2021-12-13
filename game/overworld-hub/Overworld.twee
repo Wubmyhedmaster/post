@@ -29,7 +29,7 @@ You are in the middle of an open grassy landscape, almost like something you'd s
             <br>
 <</if>>
 
-<<if $tentnorth lt 5>>
+<<if $tentnorth lt 20>>
 		<<link [[North (0:10)|World Hub]]>><<pass 10>><<set $tentnorth += 1>><<set $phase to 1>><</link>>
 		<br>
 	<</if>>
@@ -37,7 +37,7 @@ You are in the middle of an open grassy landscape, almost like something you'd s
 		<<link [[South (0:10)|World Hub]]>><<pass 10>><<set $tentnorth -= 1>><<set $phase to 2>><</link>>
 		<br>
 	<</if>>
-	<<if $tenteast lt 5>>
+	<<if $tenteast lt 20>>
 		<<link [[East (0:10)|World Hub]]>><<pass 10>><<set $tenteast += 1>><<set $phase to 3>><</link>>
 		<br>
 	<</if>>
@@ -79,7 +79,7 @@ You are in the middle of an open grassy landscape, almost like something you'd s
             <br>
 <</if>>
 
-<<if $tentnorth lt 5>>
+<<if $tentnorth lt 20>>
 		<<link [[North (0:10)|World Hub]]>><<pass 10>><<set $tentnorth += 1>><<set $phase to 1>><</link>>
 		<br>
 	<</if>>
@@ -87,7 +87,7 @@ You are in the middle of an open grassy landscape, almost like something you'd s
 		<<link [[South (0:10)|World Hub]]>><<pass 10>><<set $tentnorth -= 1>><<set $phase to 2>><</link>>
 		<br>
 	<</if>>
-	<<if $tenteast lt 5>>
+	<<if $tenteast lt 20>>
 		<<link [[East (0:10)|World Hub]]>><<pass 10>><<set $tenteast += 1>><<set $phase to 3>><</link>>
 		<br>
 	<</if>>
