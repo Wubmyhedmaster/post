@@ -1,0 +1,52 @@
+:: World Hub
+
+You are in the middle of an open grassy landscape, almost like something you'd see before.
+
+<<widget "tentacleworldintro">>
+
+<<set $tentnorth to 0>>
+<<set $tenteast to 0>>
+
+<<if $phase is 1>>
+	You walk north.
+	<br><br>
+<</if>>
+<<if $phase is 2>>
+	You walk south.
+	<br><br>
+<</if>>
+<<if $phase is 3>>
+	You walk east.
+	<br><br>
+<</if>>
+<<if $phase is 4>>
+	You walk west.
+	<br><br>
+<</if>>
+
+    <<if $tentnorth is 0 and $tenteast is 0>>
+			You stand in front of the entrance to bunker 105
+			<br>
+			<<link [[Enter|Bunker 1]]>><</link>>
+
+<<if $tentnorth lt 5>>
+		<<link [[North (0:10)|Tentacle Plains]]>><<pass 10>><<set $tentnorth += 1>><<set $phase to 1>><</link>>
+		<br>
+	<</if>>
+	<<if $tentnorth gt -5>>
+		<<link [[South (0:10)|World Hub]]>><<pass 10>><<set $tentnorth -= 1>><<set $phase to 2>><</link>>
+		<br>
+	<</if>>
+	<<if $tenteast lt 5>>
+		<<link [[East (0:10)|World Hub]]>><<pass 10>><<set $tenteast += 1>><<set $phase to 3>><</link>>
+		<br>
+	<</if>>
+	<<if $tenteast gt -5>>
+		<<link [[West (0:10)|World Hub]]>><<pass 10>><<set $tenteast -= 1>><<set $phase to 4>><</link>>
+		<br>
+
+:: Bunker 1
+You bang and pound on the door but find, as expected, it's sealed tight.
+<br>
+<<link [[Back|World Hub]]>><</link>>
+

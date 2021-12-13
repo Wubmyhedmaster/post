@@ -157,7 +157,7 @@ You are in your bedroom.
 <br><br>
 
 :: Hallway
-<<person1>><<npc Supervisor Lavely>>
+<<person1>><<npc "Supervisor Lavely">>
 You exit your bedroom and enter a long hallway. You know that connected to this hallway are the bunker's fitness room, mess hall, security office, and the bunker's supervisor's office.
 <br>
 
@@ -165,9 +165,13 @@ You remember being tasked with reporting to the supervisor this morning but <<he
 <br>
 
 <<link [[Have a Quick Workout|Fitness Room 1]]>><</link>>
+<br>
 <<link [[Eat Breakfast|Mess Hall]]>><</link>>
+<br>
 <<link [[Try the Security Door|Security 1]]>><</link>>
+<br>
 <<link [[See the Supervisor|Supervisor 1]]>><</link>>
+<br>
 
 :: Fitness Room 1
 Since you don't have long, you have a brisk exercise leaving you feeling invigorated. <<set $athletics += 2>>
@@ -180,8 +184,43 @@ You have a seat in the mess hall and begin to eat breakfast. You have quite the 
 <<link [[See the Supervisor|Supervisor 1]]>><</link>>
 
 :: Security 1
-You give the security door a rough tug affirming it's quite locked. Even if you wanted, this door is way to hard for someone like you to pick.
+You give the security door a rough tug affirming it's quite locked. Even if you wanted, this door is way to hard for someone like you to break into.
 <br>
 <<link [[See the Supervisor|Supervisor 1]]>><</link>>
 
 :: Supervisor 1
+<<person1>><<npc "Supervisor Lavely">>
+You slide open the stainless steel door and find a round <<personsimple>> sitting at a fancy looking desk. <<He>> sits there idlely twisting <<his>> pencil almost giving you no mind. <<He>> lays down the pencil and looks at you and for as unassuming as <<he>> looks his eyes give off a glare that makes you glad you're not on <<his>> bad side.
+<br>
+
+"Welcome please take a seat." <<He>> says.
+<br>
+
+As you sit in the chair in front of <<him>>, <<he>> rises to his feet. "So I've called you here to discuss a few issues we've been having recently." He says taking a sip from his rather luxurious coffee cup.
+<br>
+
+"We've had quite some overpopulation issue recently here in bunker 105, and I'm afraid we'll have to cut back on rations. Unfortunately you won the lottery, and will either have to leave or starve." A sinister smile grows across <<his>> face as he breaks the news.
+<br>
+
+<<link [[Leave the Bunker|Leaving the Bunker]]>><</link>>
+<br>
+<<link [[Lunge for the Supervisor|Attack Supervisor]]>><</link>>
+<br>
+<<link [[Starve|Starvation]]>><</link>>
+<br>
+
+:: Starvation
+You think on your choices, both are certain death anyway. You might as well be comfortable while dying rather than dying cold and alone out there. You tell the supervisor your choice and head back to your room. That night you're so hungry, but when you check the mess hall you're denied dinner just as the supervisor had said. A couple days pass as you waste away until one night you fall asleep and never wake up.
+<br>
+Game Over
+
+:: Leaving the Bunker
+You think on your choices, at least leaving has some possibility of survival, afterall you don't really know what it's like out there. You inform the supervisor of your choice and gather your stuff. You look over your belongings, you don't really have much of value. You sit at the door as the guards crank open the bunker door and wish you luck as you step out into the sun.
+<br>
+<<link [[Enter the Wastes|World Hub]]>><</link>>
+
+:: Attack Supervisor
+<<person1>><<npc "Supervisor Lavely">>
+Taking little time you think you throw yourself on the supervisor, being a big <<personsimple>> <<he>> is hardly affected, as <<he>> calls out to the guards stationed outside the door. The guards haul you to the exit and throw you out of the bunker into the wastes. <<npcincr "Supervisor Lavely" "love" -999>>
+<br>
+<<link [[Enter the Wastes|World Hub]]>><</link>>

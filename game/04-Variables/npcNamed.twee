@@ -292,7 +292,6 @@
 			<<if $NPCName[_i].hairColour is 0 or $NPCName[_i].hairColour is undefined or $args[0] is "default">>
 				<<set $NPCName[_i].hairColour to "strawberryblond">>
 			<</if>>
-		<<default>>
 			<<if $NPCName[_i].eyeColour is 0 or $NPCName[_i].eyeColour is undefined>>
 				<<set $NPCName[_i].eyeColour to ["purple","dark blue","light blue","amber","hazel","green","red","pink","grey"].pluck()>>
 				<<set $NPCName[_i].hairColour to ["red","black","brown","lightbrown","blond","platinumblond","strawberryblond","ginger"].pluck()>>
@@ -304,6 +303,7 @@
 			<<if $NPCName[_i].hairColour is 0 or $NPCName[_i].hairColour is undefined or $args[0] is "default">>
 				<<set $NPCName[_i].hairColour to "blond">>
 			<</if>>
+			<<default>>
 	<</switch>>
 <</for>>
 <</widget>>
