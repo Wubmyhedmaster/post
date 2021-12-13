@@ -21,13 +21,6 @@ You are in the middle of an open grassy landscape, almost like something you'd s
 <<if $phase is 4>>
 	You walk west.
 	<br><br>
-<</if>>
-    <<if $tentnorth is 0 and $tenteast is 0>>
-			You stand in front of the rusted tube entrance to bunker 105.
-			<br>
-			<<link [[Enter|Bunker 1]]>><</link>>
-            <br>
-<</if>>
 
 <<if $tentnorth lt 20>>
 		<<link [[North (0:10)|World Hub]]>><<pass 10>><<set $tentnorth += 1>><<set $phase to 1>><</link>>
@@ -46,10 +39,18 @@ You are in the middle of an open grassy landscape, almost like something you'd s
 		<br>
 	<</if>>
 
+<</if>>
+    <<if $tentnorth is 0 and $tenteast is 0>>
+			You stand in front of the rusted tube entrance to bunker 105.
+			<br>
+			<<link [[Enter|Bunker 1]]>><</link>>
+            <br>
+<</if>>
+
 :: Bunker 1
 You bang and pound on the door but find, as expected, it's sealed tight.
 <br>
-<<link [[Back|World Hub 1]]>><</link>>
+<<link [[Back|World Hub]]>><</link>>
 
 :: World Hub
 
@@ -72,12 +73,6 @@ You are in the middle of an open grassy landscape, almost like something you'd s
 	You walk west.
 	<br><br>
 <</if>>
-    <<if $tentnorth is 0 and $tenteast is 0>>
-			You stand in front of the rusted tube entrance to bunker 105.
-			<br>
-			<<link [[Enter|Bunker 1]]>><</link>>
-            <br>
-<</if>>
 
 <<if $tentnorth lt 20>>
 		<<link [[North (0:10)|World Hub]]>><<pass 10>><<set $tentnorth += 1>><<set $phase to 1>><</link>>
@@ -96,7 +91,18 @@ You are in the middle of an open grassy landscape, almost like something you'd s
 		<br>
 	<</if>>
 
-:: Bunker 1
-You bang and pound on the door but find, as expected, it's sealed tight.
-<br>
-<<link [[Back|World Hub 1]]>><</link>>
+<<if $tentnorth is 0 and $tenteast is 0>>
+			You stand in front of the rusted tube entrance to bunker 105.
+			<br>
+			<<link [[Enter|Bunker 1]]>><</link>>
+            <br>
+<</if>>
+
+<<if $tentnorth is 0 and $tenteast is -3>>
+			You arrive at the gate of a rather tribal looking village. The stationed guards nod as if to say "Welcome, come in".
+			<br>
+			<<link [[Enter|Chiefdom]]>><</link>>
+            <br>
+<</if>>
+
+

@@ -65,7 +65,6 @@ You are in your bedroom.
 		<br>
 		<<listsleepoutfits>>
 	<</if>>
-	<<roomoptions>>
 	<br>
 	Your clothes are kept in the corner.
 	<br>
@@ -202,6 +201,8 @@ As you sit in the chair in front of <<him>>, <<he>> rises to his feet. "So I've 
 "We've had quite some overpopulation issue recently here in bunker 105, and I'm afraid we'll have to cut back on rations. Unfortunately you won the lottery, and will either have to leave or starve." A sinister smile grows across <<his>> face as he breaks the news.
 <br>
 
+<<endevent>>
+
 <<link [[Leave the Bunker|Leaving the Bunker]]>><</link>>
 <br>
 <<link [[Lunge for the Supervisor|Attack Supervisor]]>><</link>>
@@ -223,4 +224,10 @@ You think on your choices, at least leaving has some possibility of survival, af
 <<person1>><<npc "Supervisor Lavely">>
 Taking little time you think you throw yourself on the supervisor, being a big <<personsimple>> <<he>> is hardly affected, as <<he>> calls out to the guards stationed outside the door. The guards haul you to the exit and throw you out of the bunker into the wastes. <<npcincr "Supervisor Lavely" "love" -999>>
 <br>
+<<endevent>>
 <<link [[Enter the Wastes|World Hub 1]]>><</link>>
+
+:: Bunker 1
+You bang and pound on the door but find, as expected, it's sealed tight.
+<br>
+<<link [[Back|World Hub 1]]>><</link>>

@@ -1,0 +1,26 @@
+:: Chiefdom
+You walk through the gates and enter the small forested village. The trees are large and gnarled showing signs of age. 
+<br>
+    <<if $science gte 200>>
+Thinking back to your education, you can say these trees aren't quite like their old world counterparts. They display new structures resembling tumors on their flesh, most likely a result of growth within radioactive environments.
+<br>
+<</if>>
+<<link [[Enter the Chief's Hut|Chief Hut]]>><</link>>
+<br>
+<<link [[Enter the Woodland Shop|Clothing Shop]]>><</link>>
+<br>
+<<link [[Back to the Wastes|World Hub]]>><</link>>
+<br>
+
+:: Chief Hut
+<<person1>><<npc "Chief Ironleaf">>
+You enter the rather large drooping hut to find the chief sitting upon a small pillow. <<He>> is a rather old <<personsimple>> with the wrinkles to show it. <<He>> smiles upon seeing you.
+<br>
+"Ah a vistor, we don't get many of you way out here." <<He>> scans you over with <<his>> eyes.
+<br>
+<<if $worn.upper.name isnot "diving">>
+"You're dressed normal for a waster" <<He>> observes. "But you carry yourself in a different manner."
+<</if>>
+<<if $worn.upper.name is "diving">>
+"You're dressed quite strangely" <<He>> observes. "Almost like someone from the old world."
+<</if>>
