@@ -1,0 +1,187 @@
+:: StoryData
+{
+"ifid": "A6AFB52D-38F2-4CB5-86A8-54BF665670D6",
+"format": "SugarCube",
+"format-version": "2.23.4"
+}
+
+:: StoryTitle
+Degrees of Apocalyptia
+
+:: Start [nosave]
+<<if $intro is undefined>>
+	<<gameStartOnly>>
+<</if>>
+<<effects>>
+
+<<if $images is 1>>
+	<img class="resize" src="img/misc/banner.png">
+<</if>>
+
+This work of fiction contains content of a violent nature and is inappropriate for minors.
+<br><br>
+
+Save files are stored in your browser's cache. Save to file or text in the "Export/Import" tab in "Saves" to avoid losing them.
+<br><br>
+
+<<set $settingsExitPassage to "Start2">>
+<<initsettings>>
+<<settings>>
+
+:: Start2
+
+<<variablesStart2>>
+<<effects>>
+
+Welcome to the alpha of Degrees of Apocalyptia!
+<br><br>
+
+If you want to avoid trouble, don't cause unnecessary conflict. Stay in areas where you are welcome, and try to avoid fights if you're not confident you'll survive. Nights are particularly dangerous - be careful when travelling close to sundown. Your actions, major and miniscule, will attract both good and bad attention: always think twice about them.
+<br><br>
+
+Good luck, survivor.
+<br><br>
+
+<<link [[Next|Bunker Intro]]>><</link>>
+
+<br><br>
+
+:: Bunker Intro
+You awaken in the metal coffin your government calls a bunker. As per usual there's quite a racket within the mess hall next door disturbing your morning sleep as if an alarm.
+<br><br>
+
+<<link [[Get Up|Bedroom]]>><</link>>
+
+:: Bedroom
+<<bedclotheson "bed">>
+<<set $outside to 0>><<set $location to "home">><<effects>>
+You are in your bedroom.
+<br><br>
+
+	Your bed takes up most of the room.
+	<<if $slimeEvent is undefined>>
+		<br>
+		<<bedicon>><<link [[Strip and get in bed|Bed]]>><<undressSleep "bed">><</link>>
+		<br>
+		<<listsleepoutfits>>
+	<</if>>
+	<<roomoptions>>
+	<br>
+	Your clothes are kept in the corner.
+	<br>
+	<<wardrobeicon>>[[Wardrobe]]
+	<br>
+	<<if $nextPassageCheck is "Mirror">>
+		<span class="nextLink"><<mirroricon>>[[Mirror]]</span>
+		<br>	
+	<<else>>
+		<<homemirroricon>>[[Mirror]]
+		<br>
+
+
+
+
+
+	<</if>>
+	<br>
+	The hallway outside connects to the rest of the bunker.
+	<br>
+
+<<link [[Enter the Hallway|Hallway]]>><</link>>
+
+:: Sleep
+
+<<if !_preventUpdate and !$autosavedisabled>>
+	<<run Save.autosave.save(null, {"saveId":$saveId, "saveName":$saveName})>>
+	<<run setSaveDetail("autosave",{"saveId":$saveId,"saveName":$saveName},Story.get($passage).description())>>
+<</if>>
+<<sleep>><<effects>>
+<<sleepeffects>>
+
+:: Bed
+
+<<effects>>
+<<wearoutfit>>
+<<if _skip isnot true>>
+	<<if $sleeptrouble is 1 and $controlled is 0>>
+		<<link [[Sleep for 10 hours|Sleep]]>><<set $sleephour to 10>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 10>>)<<ltiredness>>
+		<br>
+		<<link [[Sleep for 9 hours|Sleep]]>><<set $sleephour to 9>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 9>>)<<ltiredness>>
+		<br>
+	<</if>>
+
+	<<link [[Sleep for 8 hours|Sleep]]>><<set $sleephour to 8>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 8>>)<<ltiredness>>
+	<br>
+	<<link [[Sleep for 7 hours|Sleep]]>><<set $sleephour to 7>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 7>>)<<ltiredness>>
+	<br>
+	<<link [[Sleep for 6 hours|Sleep]]>><<set $sleephour to 6>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 6>>)<<ltiredness>>
+	<br>
+	<<link [[Sleep for 5 hours|Sleep]]>><<set $sleephour to 5>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 5>>)<<ltiredness>>
+	<br>
+	<<link [[Sleep for 4 hours|Sleep]]>><<set $sleephour to 4>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 4>>)<<ltiredness>>
+	<br>
+	<<link [[Sleep for 3 hours|Sleep]]>><<set $sleephour to 3>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 3>>)<<ltiredness>>
+	<br>
+	<<link [[Sleep for 2 hours|Sleep]]>><<set $sleephour to 2>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 2>>)<<ltiredness>>
+	<br>
+	<<link [[Sleep for 1 hour|Sleep]]>><<set $sleephour to 1>><<set $saveDetails.auto.count++>><</link>> &#8194;(<<timeAfterXHours 1>>)<<ltiredness>>
+	<br>
+	<<link [[Just sleep|Sleep]]>><<set $sleephour to -1>><<set $saveDetails.auto.count++>><</link>> (??:??)<<ltiredness>>
+	<br><br>
+
+	<<link [[Climb out of bed|Bedroom]]>><<storeon "bed">><<set $wardrobe_location to "wardrobe">><<endevent>><</link>>
+	<br><br>
+<<else>>
+	<<unset _skip>>
+<</if>>
+:: Mirror
+<<effects>>
+
+<<link [[Step away|Bedroom]]>><<unset $mirrorMenu>><<unset $bodywritingSet>><</link>>
+<br>
+
+<<mirror>>
+<br><br>
+
+:: Simple Mirror
+<<effects>>
+
+<<set $simpleMirror = true>>
+<<if $previousPassage is undefined>>
+	<<set $previousPassage = "Bedroom">>
+<</if>>
+<<link [[Step away|$previousPassage]]>><<unset $mirrorMenu>><<unset $simpleMirror>><<unset $bodywritingSet>><</link>>
+<br>
+
+<<mirror>>
+<br><br>
+
+:: Hallway
+<<person1>><<npc Supervisor Lavely>>
+You exit your bedroom and enter a long hallway. You know that connected to this hallway are the bunker's fitness room, mess hall, security office, and the bunker's supervisor's office.
+<br>
+
+You remember being tasked with reporting to the supervisor this morning but <<he>> shouldn't mind if you're a little late.
+<br>
+
+<<link [[Have a Quick Workout|Fitness Room 1]]>><</link>>
+<<link [[Eat Breakfast|Mess Hall]]>><</link>>
+<<link [[Try the Security Door|Security 1]]>><</link>>
+<<link [[See the Supervisor|Supervisor 1]]>><</link>>
+
+:: Fitness Room 1
+Since you don't have long, you have a brisk exercise leaving you feeling invigorated. <<set $athletics += 2>>
+<br>
+<<link [[See the Supervisor|Supervisor 1]]>><</link>>
+
+:: Mess Hall
+You have a seat in the mess hall and begin to eat breakfast. You have quite the filling meal of nutrient paste and water, a rather common meal nowadays lacking in flavor tasting more like cardboard than food, and head to the Supervisor's Office.
+<br>
+<<link [[See the Supervisor|Supervisor 1]]>><</link>>
+
+:: Security 1
+You give the security door a rough tug affirming it's quite locked. Even if you wanted, this door is way to hard for someone like you to pick.
+<br>
+<<link [[See the Supervisor|Supervisor 1]]>><</link>>
+
+:: Supervisor 1
