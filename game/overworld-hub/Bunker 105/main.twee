@@ -217,10 +217,10 @@ Game Over
 :: Leaving the Bunker
 You think on your choices, at least leaving has some possibility of survival, afterall you don't really know what it's like out there. You inform the supervisor of your choice and gather your stuff. You look over your belongings, you don't really have much of value. You sit at the door as the guards crank open the bunker door and wish you luck as you step out into the sun.
 <br>
-<<link [[Enter the Wastes|World Hub]]>><</link>>
+<<link [[Enter the Wastes|World Hub 1]]>><</link>>
 
 :: Attack Supervisor
 <<person1>><<npc "Supervisor Lavely">>
 Taking little time you think you throw yourself on the supervisor, being a big <<personsimple>> <<he>> is hardly affected, as <<he>> calls out to the guards stationed outside the door. The guards haul you to the exit and throw you out of the bunker into the wastes. <<npcincr "Supervisor Lavely" "love" -999>>
 <br>
-<<link [[Enter the Wastes|World Hub]]>><</link>>
+<<link [[Enter the Wastes|World Hub 1]]>><</link>>
