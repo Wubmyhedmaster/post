@@ -2858,9 +2858,9 @@ plural - widget will output "are" if 1, and "is" if 0. eg - Your hat <<upperplur
 },
 
 	{index: 66,
-	name: "diving suit",
-	name_cap: "Diving suit",
-	variable: "diving",
+	name: "skinsuit",
+	name_cap: "skinsuit",
+	variable: "skinsuit",
 	integrity: 200,
 	integrity_max: 200,
 	fabric_strength: 50,
