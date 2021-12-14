@@ -18,9 +18,9 @@ You enter the rather large drooping hut to find the chief sitting upon a small p
 <br>
 "Ah a vistor, we don't get many of you way out here." <<He>> scans you over with <<his>> eyes.
 <br>
-<<if $worn.upper.name isnot "diving">>
+<<if $worn.upper.name isnot "diving suit">>
 "You're dressed normal for a waster" <<He>> observes. "But you carry yourself in a different manner."
 <</if>>
-<<if $worn.upper.name is "diving">>
+<<if $worn.upper.name is "diving suit">>
 "You're dressed quite strangely" <<He>> observes. "Almost like someone from the old world."
 <</if>>
