@@ -10,7 +10,6 @@ Degrees of Lewdity
 
 :: Start [nosave]
 <<if $intro is undefined>>
-	<<gameStartOnly>>
 <</if>>
 <<effects>>
 

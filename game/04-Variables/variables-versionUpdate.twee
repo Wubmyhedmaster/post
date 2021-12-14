@@ -773,7 +773,7 @@
 <</if>>
 
 <<if $avery_penis_size isnot undefined>>
-	<<for _npc range ["avery", "bailey", "charlie", "darryl", "doren", "eden", "gwylan", "harper", "jordan", "kylar", "landry", "leighton", "mason", "morgan", "river", "robin", "sam", "sirris", "whitney", "winter","supervisorlavely"]>>
+	<<for _npc range ["avery", "bailey", "charlie", "darryl", "doren", "eden", "gwylan", "harper", "jordan", "kylar", "landry", "leighton", "mason", "morgan", "river", "robin", "sam", "sirris", "whitney", "winter","supervisorlavely","chiefironleaf"]>>
 		<<run delete V[_npc + "_penis_size"]>>
 	<</for>>
 <</if>>

@@ -493,14 +493,23 @@ alternative way to write that:
 		<<set $sydneyDaily to {}>>
 		<<set $sydneyDaily.sex to 0>>
 		<<set $sydney.sexTotal to 0>>
-		<<case Supervisor Lavely>>
+	<<case Supervisor Lavely>>
 		<<set $NPCName[_i].virginity to clone($NPCVirginityTypes)>>
 		<<if $NPCName[_i].pronoun is "m">>
-			<<set $NPCName[_i].title to "headmaster">>
+			<<set $NPCName[_i].title to "supervisor">>
 			//Lavely is the government chosen supervisor of the local fallout shelter.//
 		<<else>>
-			<<set $NPCName[_i].title to "headmistress">>
+			<<set $NPCName[_i].title to "supervisor">>
 			//Lavely is the government chosen supervisor of the local fallout shelter.//
+		<</if>>
+	<<case Chief Ironleaf>>
+		<<set $NPCName[_i].virginity to clone($NPCVirginityTypes)>>
+		<<if $NPCName[_i].pronoun is "m">>
+			<<set $NPCName[_i].title to "chief">>
+			//Ironleaf is the chief of the Fallen Leaf Tribe.//
+		<<else>>
+			<<set $NPCName[_i].title to "chieftess">>
+			//Ironleaf is the chieftess of the Fallen Leaf Tribe.//
 		<</if>>
 	<<default>>
 	<</switch>>

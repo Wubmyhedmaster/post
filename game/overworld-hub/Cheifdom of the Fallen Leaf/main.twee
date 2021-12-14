@@ -13,8 +13,14 @@ Thinking back to your education, you can say these trees aren't quite like their
 <br>
 
 :: Chief Hut
+
+<<widget "nnpc_title">><<silently>>
+<<set _text_output to $NPCName[$NPCNameList.indexOf($args[0])].title>>
+<</silently>><<print _text_output>><</widget>>
+
 <<person1>><<npc "Chief Ironleaf">>
-You enter the rather large drooping hut to find the chief sitting upon a small pillow. <<He>> is a rather old <<personsimple>> with the wrinkles to show it. <<He>> smiles upon seeing you.
+
+You enter the rather large drooping hut to find the <<nnpc_title "Chief Ironleaf">> sitting upon a small pillow. <<He>> is a rather old <<personsimple>> with the wrinkles to show it. <<He>> smiles upon seeing you.
 <br>
 "Ah a vistor, we don't get many of you way out here." <<He>> scans you over with <<his>> eyes.
 <br>
