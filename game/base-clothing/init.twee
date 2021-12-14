@@ -163,6 +163,14 @@
 <<set $worn.legs to clone(setup.clothes.legs[0])>>
 <<set $worn.feet to clone(setup.clothes.feet[0])>>
 
+<<set $worn.upper to clone(setup.clothes.upper[66])>>
+	<<set $worn.upper.colour to "black">>
+	<<set $worn.lower to clone(setup.clothes.lower[58])>>
+	<<set $worn.lower.colour to "black">>
+	<<set $worn.under_lower to clone(setup.clothes.under_lower[4])>>
+	<<set $worn.under_lower.colour to "black">>
+	<<set $worn.legs to clone(setup.clothes.legs[13])>>
+	<<set $worn.feet = clone(setup.clothes.feet[1])>>
 
 
 <<if ($player.gender is "f" and $background isnot "crossdresser") or
@@ -243,14 +251,5 @@
 		<<set $outfit[1].under_upper = "plain bra">>
 		<<set $outfit[2].under_upper = "plain bra">>
 	<</if>>
-
-	<<set $worn.upper to clone(setup.clothes.upper[66])>>
-	<<set $worn.upper.colour to "black">>
-	<<set $worn.lower to clone(setup.clothes.lower[58])>>
-	<<set $worn.lower.colour to "black">>
-	<<set $worn.under_lower to clone(setup.clothes.under_lower[4])>>
-	<<set $worn.under_lower.colour to "black">>
-	<<set $worn.legs to clone(setup.clothes.legs[13])>>
-	<<set $worn.feet = clone(setup.clothes.feet[1])>>
 <</if>>
 <</widget>>
