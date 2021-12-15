@@ -58,29 +58,18 @@ You awaken in the metal coffin your government calls a bunker. As per usual ther
 You are in your bedroom.
 <br><br>
 
-	Your bed takes up most of the room.
-	<<if $slimeEvent is undefined>>
-		<br>
-		<<bedicon>><<link [[Strip and get in bed|Bed]]>><<undressSleep "bed">><</link>>
-		<br>
-		<<listsleepoutfits>>
-	<</if>>
-	<br>
+	Your bed takes up most of the room. You shouldn't sleep any later lest the supervisor be upset.
+	<br><br>
 	Your clothes are kept in the corner.
 	<br>
-	<<wardrobeicon>>[[Wardrobe]]
+	[[Wardrobe]]
 	<br>
 	<<if $nextPassageCheck is "Mirror">>
 		<span class="nextLink"><<mirroricon>>[[Mirror]]</span>
 		<br>	
 	<<else>>
-		<<homemirroricon>>[[Mirror]]
+		[[Mirror]]
 		<br>
-
-
-
-
-
 	<</if>>
 	<br>
 	The hallway outside connects to the rest of the bunker.
@@ -178,7 +167,11 @@ Since you don't have long, you have a brisk exercise leaving you feeling invigor
 <<link [[See the Supervisor|Supervisor 1]]>><</link>>
 
 :: Mess Hall
-You have a seat in the mess hall and begin to eat breakfast. You have quite the filling meal of nutrient paste and water, a rather common meal nowadays lacking in flavor tasting more like cardboard than food, and head to the Supervisor's Office.
+<<if $exposed>>
+As you enter the mess hall people look away disgusted by your open display of nudity.
+<</if>>
+
+You have a seat and begin to eat breakfast. You have quite the filling meal of nutrient paste and water, a rather common meal nowadays lacking in flavor tasting more like cardboard than food, and head to the Supervisor's Office.
 <br>
 <<link [[See the Supervisor|Supervisor 1]]>><</link>>
 
@@ -192,11 +185,19 @@ You give the security door a rough tug affirming it's quite locked. Even if you 
 You slide open the stainless steel door and find a round <<personsimple>> sitting at a fancy looking desk. <<He>> sits there idlely twisting <<his>> pencil almost giving you no mind. <<He>> lays down the pencil and looks at you and for as unassuming as <<he>> looks his eyes give off a glare that makes you glad you're not on <<his>> bad side.
 <br>
 
+<<if $exposed>>
+"Excuse me for asking, but why are you naked." <<He>> asks staring daggers at you in destain. "Whatever this will just make the process easier."
+<br>
+<</if>>
+
+<<if not $exposed>>
+
 "Welcome please take a seat." <<He>> says.
 <br>
 
 As you sit in the chair in front of <<him>>, <<he>> rises to his feet. "So I've called you here to discuss a few issues we've been having recently." He says taking a sip from his rather luxurious coffee cup.
 <br>
+<</if>>
 
 "We've had quite some overpopulation issue recently here in bunker 105, and I'm afraid we'll have to cut back on rations. Unfortunately you won the lottery, and will either have to leave or starve." A sinister smile grows across <<his>> face as he breaks the news.
 <br>

@@ -24,9 +24,12 @@ You enter the rather large drooping hut to find the <<nnpc_title "Chief Ironleaf
 <br>
 "Ah a vistor, we don't get many of you way out here." <<He>> scans you over with <<his>> eyes.
 <br>
-<<if $worn.upper.name isnot "skinsuit">>
+<<if $worn.upper.name isnot "skinsuit" and $worn.upper.name isnot "naked">>
 "You're dressed normal for a waster" <<He>> observes. "But you carry yourself in a different manner."
 <</if>>
 <<if $worn.upper.name is "skinsuit">>
 "You're dressed quite strangely" <<He>> observes. "Almost like someone from the old world."
+<</if>>
+<<if $exposed>>
+"A follower of nudism" <<He>> observes. "Don't worry we're accepting of almost all walks of life, don't be shy of it."
 <</if>>
