@@ -50,6 +50,8 @@ Good luck, survivor.
 You awaken in the metal coffin your government calls a bunker. As per usual there's quite a racket within the mess hall next door disturbing your morning sleep as if an alarm.
 <br><br>
 
+<<set $chiefintro to 0>>
+
 <<link [[Get Up|Bedroom]]>><</link>>
 
 :: Bedroom

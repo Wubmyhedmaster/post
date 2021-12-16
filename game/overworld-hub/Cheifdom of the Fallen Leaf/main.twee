@@ -5,8 +5,14 @@ You walk through the gates and enter the small forested village. The trees are l
 Thinking back to your education, you can say these trees aren't quite like their old world counterparts. They display new structures resembling tumors on their flesh, most likely a result of growth within radioactive environments.
 <br>
 <</if>>
-<<link [[Enter the Chief's Hut|Chief Hut 1]]>><</link>>
+<<if $chiefintro lt 1>>
+<<link [[Enter the Chief's Hut|Chief Hut 1]]>><<set $chiefintro to 1>><</link>>
 <br>
+<</if>>
+<<if $chiefintro is 1>>
+<<link [[Enter the Chief's Hut|Chief Hut 2]]>><</link>>
+<br>
+<</if>>
 <<link [[Enter the Woodland Shop|Clothing Shop]]>><</link>>
 <br>
 <<link [[Back to the Wastes|World Hub]]>><</link>>
@@ -33,3 +39,38 @@ You enter the rather large drooping hut to find the <<nnpc_title "Chief Ironleaf
 <<if $exposed>>
 "A follower of nudism" <<He>> observes. "Don't worry we're accepting of almost all walks of life, don't be shy of it."
 <</if>>
+"In other news, what brings you out to our small village?" <<He>> asks kindly.
+<br>
+<<endevent>>
+<<if $chiefintro lt 2>>
+<<link [[Ask if anything needs done|Tutorial Ex]]>><</link>>
+<br>
+<</if>>
+<<link [[Exit the tent|Chiefdom]]>><</link>>
+<br>
+
+:: Tutorial Ex
+
+<<person1>><<npc "Chief Ironleaf">>
+
+
+
+:: Chief Hut 2
+
+<<widget "nnpc_title">><<silently>>
+<<set _text_output to $NPCName[$NPCNameList.indexOf($args[0])].title>>
+<</silently>><<print _text_output>><</widget>>
+
+<<person1>><<npc "Chief Ironleaf">>
+
+You enter the rather large drooping hut once again to find the <<nnpc_title "Chief Ironleaf">> sitting on <<his>> small pillow as usual.
+<br>
+"I see you're back." <<He>> says. "What was it you needed?"
+<br>
+<<endevent>>
+<<if $chiefintro lt 2>>
+<<link [[Ask if anything needs done|Tutorial Ex]]>><</link>>
+<br>
+<</if>>
+<<link [[Exit the tent|Chiefdom]]>><</link>>
+<br>
