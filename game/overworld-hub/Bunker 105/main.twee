@@ -52,6 +52,8 @@ You awaken in the metal coffin your government calls a bunker. As per usual ther
 
 <<set $chiefintro to 0>>
 
+<<set $city to 0>>
+
 <<link [[Get Up|Bedroom]]>><</link>>
 
 :: Bedroom
@@ -215,7 +217,7 @@ As you sit in the chair in front of <<him>>, <<he>> rises to his feet. "So I've 
 
 :: Starvation
 You think on your choices, both are certain death anyway. You might as well be comfortable while dying rather than dying cold and alone out there. You tell the supervisor your choice and head back to your room. That night you're so hungry, but when you check the mess hall you're denied dinner just as the supervisor had said. A couple days pass as you waste away until one night you fall asleep and never wake up.
-<br>
+<br><br>
 Game Over
 
 :: Leaving the Bunker

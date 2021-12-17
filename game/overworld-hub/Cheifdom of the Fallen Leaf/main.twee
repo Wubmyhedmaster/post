@@ -9,7 +9,7 @@ Thinking back to your education, you can say these trees aren't quite like their
 <<link [[Enter the Chief's Hut|Chief Hut 1]]>><<set $chiefintro to 1>><</link>>
 <br>
 <</if>>
-<<if $chiefintro is 1>>
+<<if $chiefintro gt 1>>
 <<link [[Enter the Chief's Hut|Chief Hut 2]]>><</link>>
 <br>
 <</if>>
@@ -53,7 +53,15 @@ You enter the rather large drooping hut to find the <<nnpc_title "Chief Ironleaf
 
 <<person1>><<npc "Chief Ironleaf">>
 
-
+"Ah you wish to assist the tribe?" Ironleaf asks surprised. "Not often do travelers want to assist the tribe." Ironlead scratches <<his>> head thinking.
+<br>
+"You know, there is a nearby ruin that needs to be scouted out. Could you do that for the tribe?"
+<br>
+<<endevent>>
+<<link [[Agree|Tutorial Le]]>><<set $chiefintro to 2>><</link>>
+<br>
+<<link [[Refuse and leave|Chiefdom]]>><</link>>
+<br>
 
 :: Chief Hut 2
 
@@ -74,3 +82,11 @@ You enter the rather large drooping hut once again to find the <<nnpc_title "Chi
 <</if>>
 <<link [[Exit the tent|Chiefdom]]>><</link>>
 <br>
+
+:: Tutorial Le
+
+"Great!" Ironleaf seems very happy. "Please tell us if you find anything. The ruin is just north of here."
+<br>
+You're rushed out of the room and are left on the front step of the hut.
+<br>
+<<link [[Next|Chiefdom]]>><</link>>

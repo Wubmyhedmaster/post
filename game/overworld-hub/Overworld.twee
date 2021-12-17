@@ -16,12 +16,41 @@ You bang and pound on the door but find, as expected, it's sealed tight.
 
 :: World Hub
 
-<<if $tenteast gt -2 or $tentnorth gt -1>>
+<<if $city gt 0>>
+<<set $city -= 1>>
+<</if>>
+
+<<if $tentnorth is 3 and $tenteast is -4>>
+			You enter the ruinous outskirts of a city.
+			<br>
+<</if>>
+
+<<if $tentnorth is 3 and $tenteast is -2>><<set $city to 1>>
+			You enter the ruinous outskirts of a city.
+			<br>
+<</if>>
+
+<<if $tentnorth is 2 and $tenteast is -3>><<set $city to 1>>
+			You enter the ruinous outskirts of a city.
+			<br>
+<</if>>
+
+<<if $tentnorth is 4 and $tenteast is -3>><<set $city to 1>>
+			You enter the ruinous outskirts of a city.
+			<br>
+<</if>>
+
+<<if $tentnorth is 3 and $tenteast is -3>><<set $city to 2>>
+			You enter into the proper city ruins. Many dilapidated buiding litter the land and sky. If you were to hazard a guess there is likely many riches and dangers to be gained here.
+			<br><br>
+<</if>>
+
+<<if $tenteast gt -2 or $tentnorth gt -1 and $city lt 1>>
 You are in the middle of an open grassy landscape, almost like something you'd see before the world was ruined.
 <br>
 <</if>>
 
-<<if $tenteast lt -1 and $tentnorth lt 0>>
+<<if $tenteast lt -1 and $tentnorth lt 0 and $city lt 1>>
 You are wandering through an old woodland full of ancient looking trees.
 <br>
 <</if>>
@@ -57,7 +86,7 @@ You are wandering through an old woodland full of ancient looking trees.
 	<</if>>
 	<<if $tenteast gt -5>>
 		<<link [[West (0:20)|World Hub]]>><<pass 20>><<set $tenteast -= 1>><<set $phase to 4>><</link>>
-		<br>
+		<br><br>
 	<</if>>
 
 <<if $tentnorth is 0 and $tenteast is 0>>
@@ -74,4 +103,7 @@ You are wandering through an old woodland full of ancient looking trees.
             <br>
 <</if>>
 
-
+<<if $tentnorth is 3 and $tenteast is -3>>
+<<link [[Scavenge|Scavenge Plains]]>><</link>>
+            <br>
+<</if>>
