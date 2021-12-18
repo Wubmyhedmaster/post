@@ -1,0 +1,20 @@
+:: Inventory [widget]
+
+<<widget "inventory">>
+
+<<if $wood gte 0>>
+You're carrying some planks of wood.
+<br>
+<</if>>
+
+<<if $iron gte 0>>
+You're carrying some iron slag.
+<br>
+<</if>>
+
+<<if $iron and $wood is 0>>
+You're carrying nothing.
+<br>
+<</if>>
+
+<</widget>>

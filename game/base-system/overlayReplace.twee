@@ -9,6 +9,9 @@
 			<<case "characteristics">>
 				<<replace #customOverlayTitle>><<OverlayTitle "colorCodes">><</replace>>
 				<<replace #customOverlayContent>><<characteristics>><</replace>>
+			<<case "inventory">>
+				<<replace #customOverlayTitle>><<OverlayTitle "colorCodes">><</replace>>
+				<<replace #customOverlayContent>><<inventory>><</replace>>
 			<<case "traits">>
 				<<replace #customOverlayTitle>><<OverlayTitle>><</replace>>
 				<<replace #customOverlayContent>><<traits>><</replace>>

@@ -97,9 +97,20 @@ You are wandering through an old woodland full of ancient looking trees.
 <</if>>
 
 <<if $tentnorth is -2 and $tenteast is -3>>
-			You arrive at the gate of a rather tribal looking village. The stationed guards nod as if to say "Welcome, come in".
+			You arrive at the gate of a rather tribal looking village called Fallen Leaf. The stationed guards nod as if to say "Welcome, come in".
 			<br>
 			<<link [[Enter|Chiefdom]]>><</link>>
+            <br>
+<</if>>
+
+<<if $tentnorth is 5 and $tenteast is -1>>
+			You reach the gates of the large gated city of Lyro. The houses are constructed of sturdy wood and iron scraps. Upon seeing you the guards
+			<<if $exposed>> tense up uneased by your nudity.
+			<<else>>
+			wave you in.
+			<</if>>
+			<br>
+			<<link [[Enter|UT1]]>><</link>>
             <br>
 <</if>>
 
@@ -110,13 +121,15 @@ You are wandering through an old woodland full of ancient looking trees.
 
 :: Scavenge Plains
 <<if $chiefintro is 2>>
+<<person1>><<npc "Greene">>
 You investigate the ruined city as Chief Ironleaf asked.
 <br>
-As you search the ruins you come across an older man who looks about in his 50s. As you approach he looks at you and runs behind a distant building.
+As you search the ruins you come across an older <<personsimple>> who looks about in <<his>> 50s. As you approach <<he>> looks at you and runs behind a distant building.
 <br>
-<<link [[Chase Him|Running in the 50s]]>><<set $chiefintro to 3>><<set $scavenger to 1>><</link>>
+<<endevent>>
+<<link [[Chase Them|Running in the 50s]]>><<set $chiefintro to 3>><<set $scavenger to 1>><</link>>
 <br>
-<<link [[Let Him Go|Let Go]]>><<set $chiefintro to 3>><</link>>
+<<link [[Let Them Go|Let Go]]>><<set $chiefintro to 3>><</link>>
 <</if>>
 
 <<if $chiefintro isnot 2>>
@@ -136,7 +149,7 @@ As you search the ruins you come across an older man who looks about in his 50s.
 			<br>
 			<<link [[Back|World Hub]]>><</link>>
 			<</if>>
-		<<elseif $rng gte 71>>
+		<<elseif $rng gte 76>>
 		You find a bit of useful salvage. <<set $iron += 1>>
 		<br>
 		<<link [[Back|World Hub]]>><</link>>
@@ -145,7 +158,7 @@ As you search the ruins you come across an older man who looks about in his 50s.
 		<br>
 		<<link [[Back|World Hub]]>><</link>>
 		<<elseif $rng gte 51>>
-		You search the ruins and find a small amount of useless trinkets worth 10 dollars. <<set $money += 100>>
+		You search the ruins and find a small amount of useless trinkets worth 10 dollars. <<set $money += 1000>>
 		<br>
 		<<link [[Back|World Hub]]>><</link>>
 		<<else>>
@@ -161,38 +174,44 @@ You let the stranger run away. You should probably return to the tribe to tell t
 <<link [[Next|World Hub]]>><</link>>
 
 :: Running in the 50s
-You chase after the man
+<<person1>><<npc "Greene">>
+You chase after the <<personsimple>>
 <<if $athletics gte 200>>
-and it doesn't take long before you corner him in a dead end.
+and it doesn't take long before you corner <<him>> in a dead end.
 <br>
 <</if>>
 <<if $athletics lte 200>>
-and after a long and strenuous chase you finally corner him in a dead end.
+and after a long and strenuous chase you finally corner <<him>> in a dead end.
 <br>
 <</if>>
-He puts his hands up in surrender and looks scared. "Please don't hurt me I mean no harm." You can see he has some decent looking equipment on him.
+<<He>> puts his hands up in surrender and looks scared. "Please don't hurt me I mean no harm." You can see <<he>> has some decent looking equipment on him.
 <br>
-<<link [[Tell him you mean no harm|Fri]]>><</link>>
+<<endevent>>
+<<link [[Tell them you mean no harm|Fri]]>><</link>>
 <br>
 <<link [[Kill him|Murder]]>><<set $scavenger to 2>><</link>>
 <br>
 
 :: Fri
-You tell the man to not be afraid and that you mean no harm. While still sceptical he eases up a little. He tells you he was sent by a settlement shortly north east of here to find old world goods.
+<<person1>><<npc "Greene">>
+You tell the <<personsimple>> to not be afraid and that you mean no harm. While still sceptical <<he>> eases up a little. <<He>> tells you he was sent by a settlement shortly north east of here to find old world goods.
 <br>
-He tells you of the United Territories, a group of developed towns, that own the surrounding area. "If you ever find yourself in Lero pay me a visit."
+<<He>> tells you of the United Territories, a group of developed towns, that own the surrounding area. "If you ever find yourself in Lero pay me a visit."
 <br>
-You say goodbye and the man wanders away. With your quest finished you should return to the Chief.
+You say goodbye and the <<personsimple>> wanders away. With your quest finished you should return to the Chief.
 <br>
-<<link [[Next|World Hub]]>><<set $scavenger to 2>><</link>>
+<<endevent>>
+<<link [[Next|World Hub]]>><</link>>
 <br>
 
 :: Murder
-You disregard his pleas and smash his head in with a rock. You stand over his body and ruffle through his pockets taking anything on him including his clothes. 
+<<person1>><<npc "Greene">>
+You disregard <<his>> pleas and smash <<his>> head in with a rock. You stand over <<his>> body and ruffle through <<his>> pockets taking anything on <<him>> including <<his>> clothes. 
 <<set $money += 1000>>
 <<generalSend "wardrobe" "neck" 2 _color>>
 <<generalSend "wardrobe" "feet" 18 _color>>
 <br>
+<<endevent>>
 <<link [[Next|World Hub]]>><</link>>
 
 :: Scavenger Surrender

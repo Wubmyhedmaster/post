@@ -227,6 +227,9 @@
 	<<button SOCIAL>>
 		<<overlayReplace "social">>
 	<</button>>
+	<<button INVENTORY>>
+		<<overlayReplace "inventory">>
+	<</button>>
 	<div class="sidebarButtonSplit">
 		<<button TRAITS>>
 			<<overlayReplace "traits">>
@@ -853,7 +856,7 @@ Your $worn.under_upper.name <<underupperhas>> been pulled to your $worn.under_up
 <<widget "statsMoneyNoImg">>
 	<<if $dev is 1>>
 		<<set $money = Math.trunc($money)>>
-		You have £<<print ($money / 100)>>
+		You have $<<print ($money / 100)>>
 		<br>
 	<<else>>
 		You have <<printmoney $money true>>

@@ -54,6 +54,10 @@ You awaken in the metal coffin your government calls a bunker. As per usual ther
 
 <<set $city to 0>>
 
+<<set $iron to 0>>
+
+<<set $wood to 0>>
+
 <<if $worn.neck.name is "armoredcoat">>
 <<set $pain -= 1>>
 <</if>>

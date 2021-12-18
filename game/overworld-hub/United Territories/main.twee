@@ -1,0 +1,76 @@
+:: UT1
+You enter the city onto the bussy street. 
+<<if $history gte 200>>
+With your knowledge on old world arcitecture you can tell the people who built these houses had some kind of old world method or manual.
+<</if>>
+<br>
+<<if $scavenger is 1>>
+You can see the scavenger from the ruins waving at you from a house nearby.
+<br>
+<<link [[Visit|Greene]]>><</link>>
+<br>
+<</if>>
+<<link [[Armor Shop|Armor Shop]]>><</link>>
+<br>
+<<link [[Weapon Shop|Weapon Shop]]>><</link>>
+<br>
+<<link [[Carpentry Shop|Carpentry Shop]]>><</link>>
+<br>
+<<link [[Bar|Bar]]>><</link>>
+<br>
+<<link [[Visit the local leader|Fort]]>><</link>>
+<br>
+<<link [[Leave|World Hub]]>><</link>>
+
+:: Greene
+<<person1>><<npc "Greene">>
+
+
+:: Armor Shop
+
+
+:: Weapon Shop
+
+
+:: Carpentry Shop
+The carpentry shop is quite nicely funished with clean fresh furniture. The owner offers to buy or sell building supplies if needed. Each wood sells for $5 and iron for $10. Purchasing is twice the price.
+<br>
+
+<<if $wood gte 1>>
+    <<link [[Sell a wooden plank|Carpentry Shop]]>><<set $wood -= 1>><<set $money += 500>><</link>>
+    <br>
+<</if>>
+<<if $wood gte 5>>
+    <<link [[Sell five wooden planks|Carpentry Shop]]>><<set $wood -= 5>><<set $money += 2500>><</link>>
+    <br>
+<</if>>
+<<if $wood gte 10>>
+    <<link [[Sell ten wooden planks|Carpentry Shop]]>><<set $wood -= 10>><<set $money += 5000>><</link>>
+    <br>
+<</if>>
+<<if $iron gte 1>>
+    <<link [[Sell an iron slag chunk|Carpentry Shop]]>><<set $iron -= 1>><<set $money += 1000>><</link>>
+    <br>
+<</if>>
+<<if $iron gte 5>>
+    <<link [[Sell five iron slag chunks|Carpentry Shop]]>><<set $iron -= 5>><<set $money += 5000>><</link>>
+    <br>
+<</if>>
+<<if $iron gte 10>>
+    <<link [[Sell ten iron slag chunks|Carpentry Shop]]>><<set $iron -= 10>><<set $money += 10000>><</link>>
+    <br>
+<</if>>
+<<if $money gte 10>>
+    <<link [[Buy Wood|Carpentry Shop]]>><<set $wood += 1>><<set $money -= 1000>><</link>>
+    <br>
+<</if>>
+<<if $money gte 20>>
+    <<link [[Buy Iron|Carpentry Shop]]>><<set $iron += 1>><<set $money -= 2000>><</link>>
+    <br>
+<</if>>
+<<link [[Leave|UT1]]>><</link>>
+
+:: Bar
+
+
+:: Fort

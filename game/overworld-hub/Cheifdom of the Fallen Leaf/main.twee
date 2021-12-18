@@ -17,8 +17,14 @@ Thinking back to your education, you can say these trees aren't quite like their
 <<link [[Enter your Hut|Player Hut]]>><</link>>
 <br>
 <</if>>
-<<link [[Enter the Woodland Shop|Clothing Shop]]>><</link>>
+<<if $woodshop is undefined>>
+<<link [[Enter the Woodland Shop|Woodland Shop]]>><<set $woodshop to 1>><</link>>
 <br>
+<</if>>
+<<if $woodshop is 1>>
+<<link [[Enter the Woodland Shop|Woodland Shop 2]]>><</link>>
+<br>
+<</if>>
 <<link [[Back to the Wastes|World Hub]]>><</link>>
 <br>
 
@@ -112,7 +118,7 @@ You tell Ironleaf about the scavenger presence in the city. <<He>> thanks you an
 <br>
 You thank the chief and leave the tent.
 <br>
-<<link [[Leave|Chiefdom]]>><</link>>
+<<link [[Leave|Chiefdom]]>><</link>><<npcincr "Chief Ironleaf" "love" +999>>
 
 :: Tutorial ed2
 <<person1>><<npc "Chief Ironleaf">>
@@ -123,7 +129,7 @@ You tell Ironleaf about the scavenger presence in the city and about how the Uni
 <br>
 You thank the chief and leave the tent.
 <br>
-<<link [[Leave|Chiefdom]]>><</link>>
+<<link [[Leave|Chiefdom]]>><</link>><<npcincr "Chief Ironleaf" "love" +999>>
 
 :: Player Hut
     You are in your hut.
@@ -225,3 +231,31 @@ You look in your wardrobe.
 <div id="wardrobeExits"><<wardrobeExits>></div>
 <br><br>
 <<wardrobe>>
+
+:: Woodland Shop
+<<person1>><<npc "Brawnn">>
+You enter the run down hut and find an old wooden table with wears layed out upon it. A young <<personsimple>> with painted skin mans the counter.
+<br>
+"A foreigner?" <<He>> asks surprised. "Why this is a rare occasion indeed."
+<br>
+"Y-you have money right?" <<He>> stammers. "P-please buy our swords! They're the best! Only one hundred dollars!"
+<br>
+<<endevent>>
+<<if $money gte 10000>>
+<<link [[Buy one of their "Best" swords ($100)|Woodland Shop 2]]<<set $money -= 10000>><</link>>
+<br>
+<</if>>
+<<link [[Leave|Chiefdom]]>><</link>>
+
+:: Woodland Shop 2
+<<person1>><<npc "Brawnn">>
+You enter the run down hut and head to the old wooden table with wears layed out upon it. The young <<personsimple>> with painted skin mans the counter as usual.
+<br>
+<<He>> gasps. "You're back? Are you here for some of the best swords? Only one hundred dollars!"
+<br>
+<<endevent>>
+<<if $money gte 10000>>
+<<link [[Buy one of their "Best" swords ($100)|Woodland Shop 2]]<<set $money -= 10000>><</link>>
+<br>
+<</if>>
+<<link [[Leave|Chiefdom]]>><</link>>
