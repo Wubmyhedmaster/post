@@ -13,6 +13,10 @@ Thinking back to your education, you can say these trees aren't quite like their
 <<link [[Enter the Chief's Hut|Chief Hut 2]]>><</link>>
 <br>
 <</if>>
+<<if $foresthome is 1>>
+<<link [[Enter your Hut|Player Hut]]>><</link>>
+<br>
+<</if>>
 <<link [[Enter the Woodland Shop|Clothing Shop]]>><</link>>
 <br>
 <<link [[Back to the Wastes|World Hub]]>><</link>>
@@ -80,7 +84,15 @@ You enter the rather large drooping hut once again to find the <<nnpc_title "Chi
 <<link [[Ask if anything needs done|Tutorial Ex]]>><</link>>
 <br>
 <</if>>
-<<link [[Exit the tent|Chiefdom]]>><</link>>
+<<if $chiefintro is 3 and $scavenger isnot 2>>
+<<link [[Tell the Chief about the city|Tutorial ed1]]>><<set $chiefintro to 4>><</link>>
+<br>
+<</if>>
+<<if $chiefintro is 3 and $scavenger is 2>>
+<<link [[Tell the Chief about the city|Tutorial ed2]]>><<set $chiefintro to 4>><</link>>
+<br>
+<</if>>
+<<link [[Leave|Chiefdom]]>><</link>>
 <br>
 
 :: Tutorial Le
@@ -90,3 +102,126 @@ You enter the rather large drooping hut once again to find the <<nnpc_title "Chi
 You're rushed out of the room and are left on the front step of the hut.
 <br>
 <<link [[Next|Chiefdom]]>><</link>>
+
+:: Tutorial ed1
+<<person1>><<npc "Chief Ironleaf">>
+<<set $foresthome to 1>>
+You tell Ironleaf about the scavenger presence in the city. <<He>> thanks you and hands you an odd wooden block engroved with a strange pattern.
+<br>
+<<He>> informs you that it's a lock and that, as a reward for assisting the tribe, you'll get your own home.
+<br>
+You thank the chief and leave the tent.
+<br>
+<<link [[Leave|Chiefdom]]>><</link>>
+
+:: Tutorial ed2
+<<person1>><<npc "Chief Ironleaf">>
+<<set $foresthome to 1>>
+You tell Ironleaf about the scavenger presence in the city and about how the United Territories also wish to scavenge there. <<He>> thanks you and hands you an odd wooden block engroved with a strange pattern.
+<br>
+<<He>> informs you that it's a lock and that, as a reward for assisting the tribe, you'll get your own home.
+<br>
+You thank the chief and leave the tent.
+<br>
+<<link [[Leave|Chiefdom]]>><</link>>
+
+:: Player Hut
+    You are in your hut.
+    <br><br>
+    
+	Your bed sits in the corner of the room.
+	<br><br>
+
+    <<link [[Get in bed|Bed 2]]>><</link>>
+   <br><br>
+
+	Your clothes are kept in the corner.
+	<br><br>
+	<<link [[Wardrobe|Wardrobe 2]]>><</link>>
+	<br><br>
+    <<link [[Mirror|Mirror 2]]>><</link>>
+    <br><br>
+    <<link [[Exit your Hut|Chiefdom]]>><</link>>
+
+:: Bed 2
+
+<<effects>>
+
+You snuggle under the covers.
+<br>
+
+<<if _skip isnot true>>
+	<<if $sleeptrouble is 1 and $controlled is 0>>
+		<<link [[Sleep for 10 hours|Sleep 2]]>><<set $sleephour to 10>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 10>>)<<ltiredness>>
+		<br>
+		<<link [[Sleep for 9 hours|Sleep 2]]>><<set $sleephour to 9>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 9>>)<<ltiredness>>
+		<br>
+	<</if>>
+
+	<<link [[Sleep for 8 hours|Sleep 2]]>><<set $sleephour to 8>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 8>>)<<ltiredness>>
+	<br>
+	<<link [[Sleep for 7 hours|Sleep 2]]>><<set $sleephour to 7>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 7>>)<<ltiredness>>
+	<br>
+	<<link [[Sleep for 6 hours|Sleep 2]]>><<set $sleephour to 6>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 6>>)<<ltiredness>>
+	<br>
+	<<link [[Sleep for 5 hours|Sleep 2]]>><<set $sleephour to 5>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 5>>)<<ltiredness>>
+	<br>
+	<<link [[Sleep for 4 hours|Sleep 2]]>><<set $sleephour to 4>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 4>>)<<ltiredness>>
+	<br>
+	<<link [[Sleep for 3 hours|Sleep 2]]>><<set $sleephour to 3>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 3>>)<<ltiredness>>
+	<br>
+	<<link [[Sleep for 2 hours|Sleep 2]]>><<set $sleephour to 2>><<set $saveDetails.auto.count++>><</link>> (<<timeAfterXHours 2>>)<<ltiredness>>
+	<br>
+	<<link [[Sleep for 1 hour|Sleep 2]]>><<set $sleephour to 1>><<set $saveDetails.auto.count++>><</link>> &#8194;(<<timeAfterXHours 1>>)<<ltiredness>>
+	<br>
+	<<link [[Just sleep|Sleep 2]]>><<set $sleephour to -1>><<set $saveDetails.auto.count++>><</link>> (??:??)<<ltiredness>>
+	<br><br>
+
+	<<link [[Climb out of bed|Player Hut]]>><<storeon "bed">><<set $wardrobe_location to "wardrobe 2">><<endevent>><</link>>
+	<br><br>
+<<else>>
+	<<unset _skip>>
+<</if>>
+
+:: Sleep 2
+
+<<if !_preventUpdate and !$autosavedisabled>>
+	<<run Save.autosave.save(null, {"saveId":$saveId, "saveName":$saveName})>>
+	<<run setSaveDetail("autosave",{"saveId":$saveId,"saveName":$saveName},Story.get($passage).description())>>
+<</if>>
+<<sleep>><<effects>>
+<<sleepeffects>>
+<<link [[Get out of bed|Player Hut]]>><</link>>
+<br><br>
+
+:: Mirror 2
+<<effects>>
+
+<<link [[Step away|Player Hut]]>><<unset $mirrorMenu>><<unset $bodywritingSet>><</link>>
+<br>
+
+<<mirror>>
+<br><br>
+
+:: Simple Mirror 2
+<<effects>>
+
+<<set $simpleMirror = true>>
+<<link [[Step away|Player Hut]]>><<unset $mirrorMenu>><<unset $simpleMirror>><<unset $bodywritingSet>><</link>>
+<br>
+
+<<mirror>>
+<br><br>
+
+:: Wardrobe 2
+<<effects>>
+<<set $wardrobe_location to "wardrobe">>
+<<wardrobeSelection>>
+You look in your wardrobe.
+<br>
+<<link [[Step away|Player Hut]]>><</link>>
+<br>
+<div id="wardrobewear"><<wardrobewear>></div>
+<div id="wardrobeExits"><<wardrobeExits>></div>
+<br><br>
+<<wardrobe>>

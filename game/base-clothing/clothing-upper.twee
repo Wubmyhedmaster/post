@@ -2857,9 +2857,9 @@ plural - widget will output "are" if 1, and "is" if 0. eg - Your hat <<upperplur
 	notuck: 1
 },
 
-	{index: 66,
+		{index: 66,
 	name: "skinsuit",
-	name_cap: "skinsuit",
+	name_cap: "Skinsuit",
 	variable: "skinsuit",
 	integrity: 200,
 	integrity_max: 200,
@@ -2881,7 +2881,7 @@ plural - widget will output "are" if 1, and "is" if 0. eg - Your hat <<upperplur
 	exposed: 0,
 	exposed_base: 0,
 	type: ["swim", "diving"],
-	set: "diving",
+	set: "skinsuit",
 	gender: "n",
 	femininity: 0,
 	warmth: 40,
@@ -2899,7 +2899,7 @@ plural - widget will output "are" if 1, and "is" if 0. eg - Your hat <<upperplur
 	location: 0,
 	iconFile: "Diving suit.png",
  	accIcon: 0,
-	outfitPrimary:{lower:"diving suit bottom"},
+	outfitPrimary:{lower:"skinsuit bottom"},
 	notuck: 0
 },
 

@@ -3695,14 +3695,6 @@ __Map__<br>
 		<<if _config.description>>
 			<span @class="'characteristic-description ' + _config.color">_config.description</span>
 		<</if>>
-		<<if _config.showStars>>
-			<span class="characteristic-description grade-progress">Daily Progress</span>
-			<div class="progress-stars">
-				<img class="icon" @src="'img/ui/' + (_config.starLevel > 0 ? 'bronze_star' : 'empty_star') + '.png'" />
-				<img class="icon" @src="'img/ui/' + (_config.starLevel > 1 ? 'silver_star' : 'empty_star') + '.png'" />
-				<img class="icon" @src="'img/ui/' + (_config.starLevel > 2 ? 'gold_star'   : 'empty_star') + '.png'" />
-			</div>
-		<</if>>
 		<div class="meter">
 			<div @class="(_config.meterColor ? _config.meterColor + 'bar' : 'goldbar')" @style="'width:' + _config.barWidth + '%'"></div>
 		</div>

@@ -224,43 +224,36 @@ You have a <<skincolourtext>> <<if $breastsize gte 1>>You have <<breasts>>.<</if
 		<!--Core skill configurations-->
 		<<silently>>
 
-			<!--PURITY-->
-			<<if $demon gte 6>>
-				<<set _purityIcon='ui/sym_demon_purity'>>
-			<<elseif $fallenangel gte 2>>
-				<<set _purityIcon='ui/sym_fallen_purity'>>
-			<<else>>
-				<<set _purityIcon='ui/sym_purity'>>
-			<</if>>
-			<<set _purityConfig = { name : "Purity", icon : _purityIcon, displayType : "level", currentValue : $purity, modifier: 100,
+			<!--Perception-->
+			<<set _perceptionConfig = { name : "Perception", icon : _purityIcon, displayType : "level", currentValue : $purity, modifier: 100,
 				states : [
-					{ requiredValue: 0, 	level: 0, color: 'red',		description: 'You are beyond defiled.'},
-					{ requiredValue: 1, 	level: 1, color: 'red',		description: 'You feel utterly defiled.'},
-					{ requiredValue: 500, 	level: 2, color: 'pink',	description: 'You feel defiled.'},
-					{ requiredValue: 600, 	level: 3, color: 'purple',	description: 'You feel somewhat defiled.'},
-					{ requiredValue: 700, 	level: 4, color: 'blue',	description: 'You feel soiled.'},
-					{ requiredValue: 800, 	level: 5, color: 'lblue',	description: 'You feel slightly soiled.'},
-					{ requiredValue: 900, 	level: 6, color: 'teal',	description: "You don\'t feel entirely pure."},
-					{ requiredValue: 1000,	level: 7, color: 'green',	description: 'You are angelic.'}
+					{ requiredValue: 0, 	level: 0, color: 'red',		description: 'You are almost entirely blind.'},
+					{ requiredValue: 1, 	level: 1, color: 'red',		description: 'You need glasses.'},
+					{ requiredValue: 500, 	level: 2, color: 'pink',	description: 'Your senses occasionally blur.'},
+					{ requiredValue: 600, 	level: 3, color: 'purple',	description: 'You have issues finding stuff that are hidden.'},
+					{ requiredValue: 700, 	level: 4, color: 'blue',	description: 'You have typical senses.'},
+					{ requiredValue: 800, 	level: 5, color: 'lblue',	description: 'Your senses are quite better than the average man.'},
+					{ requiredValue: 900, 	level: 6, color: 'teal',	description: "You have the eyes of a hawk."},
+					{ requiredValue: 1000,	level: 7, color: 'green',	description: 'You can sense anything around you.'}
 				]
 			}>>
 
 			<!--AWARENESS-->
-			<<set _awarenessConfig = { name : "Awareness", icon : "ui/sym_awareness", displayType : "level", currentValue : $awareness, modifier: 100,
+			<<set _awarenessConfig = { name : "Awareness", icon : _purityIcon, displayType : "level", currentValue : $awareness, modifier: 100,
 				states : [
 					{ requiredValue: -200, 	level: 0, color: 'green',	description: 'You are innocent.'},
 					{ requiredValue: 1, 	level: 1, color: 'teal',	description: 'You are almost entirely innocent.'},
-					{ requiredValue: 100, 	level: 2, color: 'lblue',	description: 'You have a limited understanding of sexuality.'},
-					{ requiredValue: 200, 	level: 3, color: 'blue',	description: 'You have a normal understanding of sexuality.'},
-					{ requiredValue: 300, 	level: 4, color: 'purple',	description: 'Your knowledge of sexual depravity extends beyond that of most people.'},
+					{ requiredValue: 100, 	level: 2, color: 'lblue',	description: 'You have a limited understanding of the cruelty of the world.'},
+					{ requiredValue: 200, 	level: 3, color: 'blue',	description: 'You have a normal understanding of how cruel this planet can be.'},
+					{ requiredValue: 300, 	level: 4, color: 'purple',	description: 'Your knowledge of murder and goring that extends beyond that of most people.'},
 					{ requiredValue: 400, 	level: 5, color: 'pink',	description: 'You have seen things that few are privy to.'},
-					{ requiredValue: 500, 	level: 6, color: 'red',		description: 'You have peered into the depths of depravity.'},
-					{ requiredValue: 1000,	level: 7, color: 'red',		description: 'Your understanding is transcendental.'}
+					{ requiredValue: 500, 	level: 6, color: 'red',		description: 'You have peered into the depths of insanity.'},
+					{ requiredValue: 1000,	level: 7, color: 'red',		description: 'Your mind is practically gone, overtaken by insane ramblings.'}
 				]
 			}>>
 
 			<!--PHYSIQUE-->
-			<<set _physiqueConfig = { name : "Physique", icon : "ui/sym_physique", displayType : "level", currentValue : $physique, maxValue: $physiquesize, modifier: 100,
+			<<set _physiqueConfig = { name : "Physique", icon : _purityIcon, displayType : "level", currentValue : $physique, maxValue: $physiquesize, modifier: 100,
 				states : [
 					{ requiredValue: 0, 						level: 0, color: 'red',		description: 'You are emaciated.'},
 					{ requiredValue:  $physiquesize / 7, 		level: 1, color: 'pink',	description: 'You are skinny.'},
@@ -295,7 +288,7 @@ You have a <<skincolourtext>> <<if $breastsize gte 1>>You have <<breasts>>.<</if
 			<</switch>>
 
 			<!--WILLPOWER-->
-			<<set _willpowerConfig = { name : "Willpower", icon : "ui/redbolt", displayType : "level", currentValue : $willpower, maxValue: $willpowermax, modifier: 100,
+			<<set _willpowerConfig = { name : "Willpower", icon : _purityIcon, displayType : "level", currentValue : $willpower, maxValue: $willpowermax, modifier: 100,
 				states : [
 					{ requiredValue: 0, 						level: 0, color: 'red',		description: 'You are timid.'},
 					{ requiredValue:  $willpowermax / 7, 		level: 1, color: 'pink',	description: 'You are fainthearted.'},
@@ -314,66 +307,38 @@ You have a <<skincolourtext>> <<if $breastsize gte 1>>You have <<breasts>>.<</if
 			<</if>>
 
 			<!--BEAUTY-->
-			<<set _beautyConfig = { name : "Beauty", icon : "ui/sym_beauty", displayType : "level", currentValue : $beauty, maxValue: $beautymax, modifier: 100,
+			<<set _beautyConfig = { name : "Beauty", icon : _purityIcon, displayType : "level", currentValue : $beauty, maxValue: $beautymax, modifier: 100,
 				states : [
-					{ requiredValue: 0, 					level: 0, color: 'red',		description: 'You are plain.'},
-					{ requiredValue:  $beautymax / 7, 		level: 1, color: 'pink',	description: 'You are cute.'},
-					{ requiredValue: ($beautymax / 7) * 2, 	level: 2, color: 'purple',	description: 'You are pretty.'},
-					{ requiredValue: ($beautymax / 7) * 3, 	level: 3, color: 'blue',	description: 'You are charming.'},
-					{ requiredValue: ($beautymax / 7) * 4, 	level: 4, color: 'lblue',	description: 'You are beautiful.'},
-					{ requiredValue: ($beautymax / 7) * 5, 	level: 5, color: 'teal',	description: 'You are ravishing.'},
+					{ requiredValue: 0, 					level: 0, color: 'red',		description: 'You are ugly.'},
+					{ requiredValue:  $beautymax / 7, 		level: 1, color: 'pink',	description: 'You are homely.'},
+					{ requiredValue: ($beautymax / 7) * 2, 	level: 2, color: 'purple',	description: 'You are plain.'},
+					{ requiredValue: ($beautymax / 7) * 3, 	level: 3, color: 'blue',	description: 'You are cute.'},
+					{ requiredValue: ($beautymax / 7) * 4, 	level: 4, color: 'lblue',	description: 'You are pretty.'},
+					{ requiredValue: ($beautymax / 7) * 5, 	level: 5, color: 'teal',	description: 'You are beautiful.'},
 					{ requiredValue: ($beautymax / 7) * 6, 	level: 6, color: 'green',	description: 'Your beauty is divine.'}
 				]
 			}>>
 
-			<!--PROMISCUITY-->
-			<<set _promiscuityConfig = { name : "Promiscuity", icon : "ui/sym_promiscuity", displayType : "level", currentValue : $promiscuity, maxValue: 100, modifier: 100,
+			<!--CHARISMA-->
+			<<set _charismaConfig = { name : "Charisma", icon : _purityIcon, displayType : "level", currentValue : $charisma, maxValue: 100, modifier: 100,
 				states : [
-					{ requiredValue: 0,		level: 0, color: 'green',	description: 'You are chaste and pure.'},
-					{ requiredValue: 1,		level: 1, color: 'teal',	description: 'You are prudish.'},
-					{ requiredValue: 15, 	level: 2, color: 'lblue',	description: 'You are sexually curious.'},
-					{ requiredValue: 35, 	level: 3, color: 'blue',	description: 'The thought of sexual contact excites you.'},
-					{ requiredValue: 55, 	level: 4, color: 'purple',	description: 'You crave sexual contact.'},
-					{ requiredValue: 75, 	level: 5, color: 'pink',	description: 'You are a slut.'},
-					{ requiredValue: 95, 	level: 6, color: 'red',		description: 'Your sexual appetite is insatiable.'}
-				]
-			}>>
-
-			<!--EXHIBITIONISM-->
-			<<set _exhibitionismConfig = { name : "Exhibitionism", icon : "ui/sym_exhibitionism", displayType : "level", currentValue : $exhibitionism, maxValue: 100, modifier: 100,
-				states : [
-					{ requiredValue: 0, 	level: 0, color: 'green',	description: 'You are coy.'},
-					{ requiredValue: 1,		level: 1, color: 'teal',	description: 'You are shy.'},
-					{ requiredValue: 15, 	level: 2, color: 'lblue',	description: 'You like being sexualised.'},
-					{ requiredValue: 35, 	level: 3, color: 'blue',	description: 'You enjoy lewd attention.'},
-					{ requiredValue: 55, 	level: 4, color: 'purple',	description: 'Feeling exposed excites you.'},
-					{ requiredValue: 75, 	level: 5, color: 'pink',	description: 'You are shameless.'},
-					{ requiredValue: 95, 	level: 6, color: 'red',		description: 'The thought of exposure fills you with wild abandon.'}
-				]
-			}>>
-
-			<!--DEVIANCY-->
-			<<set _deviancyConfig = { name : "Deviancy", icon : "ui/sym_deviancy", displayType : "level", currentValue : $deviancy, maxValue: 100, modifier: 100,
-				states : [
-					{ requiredValue: 0, 	level: 0, color: 'green',	description: 'You are squeamish.'},
-					{ requiredValue: 1,		level: 1, color: 'teal',	description: 'You are conventional.'},
-					{ requiredValue: 15, 	level: 2, color: 'lblue',	description: 'Your tastes are strange.'},
-					{ requiredValue: 35, 	level: 3, color: 'blue',	description: 'Your tastes are shocking.'},
-					{ requiredValue: 55, 	level: 4, color: 'purple',	description: 'Your desires are scandalous.'},
-					{ requiredValue: 75, 	level: 5, color: 'pink',	description: "You crave acts others wouldn\'t conceive of."},
-					{ requiredValue: 95, 	level: 6, color: 'red',		description: 'You lust for the unspeakable.'}
+					{ requiredValue: 0,		level: 0, color: 'green',	description: 'You lack even an ounce of charisma.'},
+					{ requiredValue: 1,		level: 1, color: 'teal',	description: 'You have the charisma of an old hermit.'},
+					{ requiredValue: 15, 	level: 2, color: 'lblue',	description: 'You are as charismatic as a substitute teacher.'},
+					{ requiredValue: 35, 	level: 3, color: 'blue',	description: 'You have the skills of a diplomat.'},
+					{ requiredValue: 55, 	level: 4, color: 'purple',	description: 'If you were in the old world you would be a movie star.'},
+					{ requiredValue: 75, 	level: 5, color: 'pink',	description: 'You have the charisma to become a cult leader.'},
+					{ requiredValue: 95, 	level: 6, color: 'red',		description: 'Your charisma matches that of even the rulers.'}
 				]
 			}>>
 		<</silently>>
 
-		<<characteristic-box _purityConfig>>
+		<<characteristic-box _awarenessConfig>>
 		<<characteristic-box _beautyConfig>>
 		<<characteristic-box _physiqueConfig>>
 		<<characteristic-box _willpowerConfig>>
-		<<characteristic-box _awarenessConfig>>
-		<<characteristic-box _promiscuityConfig>>
-		<<characteristic-box _exhibitionismConfig>>
-		<<characteristic-box _deviancyConfig>>
+		<<characteristic-box _perceptionConfig>>
+		<<characteristic-box _charismaConfig>>		
 	</div>
 
 	<!--Common states for skills with grades-->
@@ -507,113 +472,7 @@ You have a <<skincolourtext>> <<if $breastsize gte 1>>You have <<breasts>>.<</if
 		<</if>>
 	</div>
 
-	<h4>Sex Skills</h4>
-	<!--Sex skills configurations-->
-	<<silently>>
-		<<set _seductionConfig =	{ name : "Seduction",	displayType : "grade",	currentValue : $seductionskill, modifier: 100,		states : _basicSkillGrades}>>
-		<<set _oralConfig = 		{ name : "Oral", 		displayType : "grade",	currentValue : $oralskill, 		modifier: 100,		states : _basicSkillGrades}>>
-		<<set _chestConfig = 		{ name : "Chest", 		displayType : "grade",	currentValue : $chestskill, 	modifier: 100,		states : _basicSkillGrades}>>
-		<<set _handsConfig = 		{ name : "Hands", 		displayType : "grade",	currentValue : $handskill, 		modifier: 100,		states : _basicSkillGrades}>>
-		<<set _buttocksConfig =		{ name : "Buttocks", 	displayType : "grade",	currentValue : $bottomskill, 	modifier: 100,		states : _basicSkillGrades}>>
-		<<set _analConfig = 		{ name : "Anal", 		displayType : "grade",	currentValue : $analskill, 		modifier: 100,		states : _basicSkillGrades}>>
-		<<set _thighsConfig = 		{ name : "Thighs", 		displayType : "grade",	currentValue : $thighskill, 	modifier: 100,		states : _basicSkillGrades}>>
-		<<set _feetConfig = 		{ name : "Feet", 		displayType : "grade",	currentValue : $feetskill, 		modifier: 100,		states : _basicSkillGrades}>>
-		<<if $player.penisExist>>
-			<<set _penileConfig = 	{ name : "Penile", 		displayType : "grade",	currentValue : $penileskill, 	modifier: 100,	states : _basicSkillGrades}>>
-		<</if>>
-		<<if $player.vaginaExist>>
-			<<set _vaginalConfig = 	{ name : "Vaginal", 	displayType : "grade",	currentValue : $vaginalskill, 	modifier: 100,	states : _basicSkillGrades}>>
-		<</if>>
-	<</silently>>
-	<<if $images is 1>>
-		<div id="player-body">
-			<<player-base-body>>
-		</div>
-		<div id="sex-diagram">
-
-			<div class="characteristic-box-list left-column">
-				<div class="sex-diagram-box">
-					<<characteristic-box _seductionConfig>>
-					<div class="connector-box"></div>
-				</div>
-				<div class="sex-diagram-box">
-					<<characteristic-box _chestConfig>>
-					<<connector-box 52 35 10>>
-				</div>
-				<div class="sex-diagram-box">
-					<<characteristic-box _buttocksConfig>>
-					<<connector-box 37 50 20>>
-				</div>
-				<<if $player.vaginaExist>>
-					<div class="sex-diagram-box">
-						<<characteristic-box _vaginalConfig>>
-						<<connector-box 0 50 3>>
-					</div>
-					<div class="sex-diagram-box">
-						<<characteristic-box _thighsConfig>>
-						<<connector-box 37 35 10 true>>
-					</div>
-				<<else>>
-					<div class="sex-diagram-box">
-						<<characteristic-box _thighsConfig>>
-						<<connector-box 0 35 10>>
-					</div>
-				<</if>>
-			</div>
-			<div class="characteristic-box-list right-column">
-				<div class="sex-diagram-box">
-					<<connector-box 71 35 3>>
-					<<characteristic-box _oralConfig>>
-				</div>
-				<div class="sex-diagram-box">
-					<<connector-box 74 50 15>>
-					<<characteristic-box _handsConfig>>
-				</div>
-				<<if $player.penisExist>>
-					<div class="sex-diagram-box">
-						<<connector-box 36 65 2>>
-						<<characteristic-box _penileConfig>>
-					</div>
-					<div class="sex-diagram-box">
-						<<connector-box 2 50 12 true>>
-						<<characteristic-box _analConfig>>
-					</div>
-					<div class="sex-diagram-box">
-						<<connector-box 0 50 14>>
-						<<characteristic-box _feetConfig>>
-					</div>
-				<<else>>
-					<div class="sex-diagram-box">
-						<<connector-box 39 65 12>>
-						<<characteristic-box _analConfig>>
-					</div>
-					<div class="sex-diagram-box">
-						<<connector-box 45 80 15>>
-						<<characteristic-box _feetConfig>>
-					</div>
-				<</if>>
-			</div>
-		</div>
-	<<else>>
-		<div id="sex-skills" class="characteristic-box-list">
-			<<characteristic-box _seductionConfig>>
-			<<characteristic-box _oralConfig>>
-			<<if $player.vaginaExist>>
-				<<characteristic-box _vaginalConfig>>
-			<</if>>
-			<<if $player.penisExist>>
-				<<characteristic-box _penileConfig>>
-			<</if>>
-			<<characteristic-box _analConfig>>
-			<<characteristic-box _handsConfig>>
-			<<characteristic-box _feetConfig>>
-			<<characteristic-box _thighsConfig>>
-			<<characteristic-box _buttocksConfig>>
-			<<characteristic-box _chestConfig>>
-		</div>
-	<</if>>
-
-	<h4>School Performance</h4>
+	<h4>Logic Skills</h4>
 	<div id="school-grades" class="characteristic-box-list">
 		<!--School grade configurations-->
 		<<silently>>
@@ -626,10 +485,10 @@ You have a <<skincolourtext>> <<if $breastsize gte 1>>You have <<breasts>>.<</if
 				{ requiredValue: 4,		level: 'A*', color: 'green'}
 			]>>
 
-			<<set _scienceConfig = 	{ name : 'Science', icon : 'misc/icon/science', displayType : "grade",	currentValue : $sciencetrait, 	modifier: 100,	percent: $science_exam, 	showStars: true, starLevel: $science_star,	states : _schoolGradeStates}>>
-			<<set _mathsConfig = 	{ name : 'Maths', 	icon : 'misc/icon/math', 	displayType : "grade",	currentValue : $mathstrait, 	modifier: 100,	percent: $maths_exam,	 	showStars: true, starLevel: $maths_star,	states : _schoolGradeStates}>>
-			<<set _englishConfig = 	{ name : 'English', icon : 'misc/icon/english', displayType : "grade",	currentValue : $englishtrait, 	modifier: 100,	percent: $english_exam, 	showStars: true, starLevel: $english_star,	states : _schoolGradeStates}>>
-			<<set _historyConfig = 	{ name : 'History', icon : 'misc/icon/history', displayType : "grade",	currentValue : $historytrait, 	modifier: 100,	percent: $history_exam, 	showStars: true, starLevel: $history_star,	states : _schoolGradeStates}>>
+			<<set _scienceConfig = 	{ name : 'Science', icon : _purityIcon, displayType : "grade",	currentValue : $sciencetrait, 	modifier: 100,	percent: $science_exam, 	showStars: true, starLevel: $science_star,	states : _schoolGradeStates}>>
+			<<set _mathsConfig = 	{ name : 'Maths', 	icon : _purityIcon, 	displayType : "grade",	currentValue : $mathstrait, 	modifier: 100,	percent: $maths_exam,	 	showStars: true, starLevel: $maths_star,	states : _schoolGradeStates}>>
+			<<set _englishConfig = 	{ name : 'English', icon : _purityIcon, displayType : "grade",	currentValue : $englishtrait, 	modifier: 100,	percent: $english_exam, 	showStars: true, starLevel: $english_star,	states : _schoolGradeStates}>>
+			<<set _historyConfig = 	{ name : 'History', icon : _purityIcon, displayType : "grade",	currentValue : $historytrait, 	modifier: 100,	percent: $history_exam, 	showStars: true, starLevel: $history_star,	states : _schoolGradeStates}>>
 			<<if $moorLuck gt 0>>
 				<<set _scienceConfig.modifier to Math.floor(_scienceConfig.modifier * (1 + ($moorLuck / 100)))>>
 				<<set _mathsConfig.modifier to Math.floor(_mathsConfig.modifier * (1 + ($moorLuck / 100)))>>
@@ -644,7 +503,7 @@ You have a <<skincolourtext>> <<if $breastsize gte 1>>You have <<breasts>>.<</if
 		<<characteristic-box _historyConfig>>
 	</div>
 	<div class="characteristic-box-extras">
-		<<set _schoolPerformanceConfig = { currentValue : $school, preText: 'Your overall school performance is ', modifier: 100, states : [
+		<<set _schoolPerformanceConfig = { currentValue : $school, preText: 'Your overall mental skills are ', modifier: 100, states : [
 				{ requiredValue: 0,   	color: 'red',		description: 'appalling.'},
 				{ requiredValue: 1, 	color: 'pink',		description: 'awful.'},
 				{ requiredValue: 400,   color: 'purple',	description: 'bad.'},
@@ -664,140 +523,15 @@ You have a <<skincolourtext>> <<if $breastsize gte 1>>You have <<breasts>>.<</if
 <h4>Weapon skills</h4>
 	<div id="prof" class="characteristic-box-list">
 		<<silently>>
-			<<set _sprayConfig = 		{ name : "Sprays", 		displayType : "grade",	currentValue : $prof.spray, 		modifier: 100,		states : _basicSkillGrades}>>
-			<<set _netConfig = 		{ name : "Nets", 		displayType : "grade",	currentValue : $prof.net, 		modifier: 100,		states : _basicSkillGrades}>>
-			<<set _hiddenConfig = 		{ name : "????", 		displayType : "grade",	currentValue : 0, 		modifier: 100,		states : _basicSkillGrades}>>
+			<<set _gunsConfig = 		{ name : "Guns", 		displayType : "grade",	currentValue : $prof.guns, 		modifier: 100,		states : _basicSkillGrades}>>
+			<<set _meleeConfig = 		{ name : "Melee", 		displayType : "grade",	currentValue : $prof.melee, 		modifier: 100,		states : _basicSkillGrades}>>
+			<<set _unarmedConfig = 		{ name : "Unarmed", 		displayType : "grade",	currentValue : $prof.unarmed, 		modifier: 100,		states : _basicSkillGrades}>>
 		<</silently>>
-		<<characteristic-box _sprayConfig>>
-		<<if $prof.net isnot undefined>>
-			<<characteristic-box _netConfig>>
-		<<else>>
-			<<characteristic-box _hiddenConfig>>
-		<</if>>
+		<<characteristic-box _gunsConfig>>
+		<<characteristic-box _meleeConfig>>
+		<<characteristic-box _unarmedConfig>>
 	</div>
 </div>
 <br><br>
-
-__Insecurities__ - <i>Scrutiny becomes harder to take as insecurity increases, inflicting more stress and damaging control. Acceptance renders you immune to the effect.</i><br><br>
-<<if $insecurity_penis_tiny gte 1 and $penissize lte 0 and $acceptance_penis_tiny lte 999>>
-	<span class="red">Insecurity: Tiny Penis</span>
-	<div class="meter">
-		<<set _percent=Math.floor(($insecurity_penis_tiny/1000)*100)>>
-		<<print '<div class="redbar" style="width:' + _percent + '%"></div>'>>
-	</div>
-	<<if $acceptance_penis_tiny gte 1 and $acceptance_penis_tiny lte 999 and $penissize lte 0>>
-		<span class="green">Acceptance: Tiny Penis</span>
-		<div class="meter">
-			<<set _percent=Math.floor(($acceptance_penis_tiny/1000)*100)>>
-			<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
-		</div>
-	<</if>>
-<</if>>
-<<if $insecurity_penis_small gte 1 and $penissize is 1 and $acceptance_penis_small lte 999>>
-	<span class="red">Insecurity: Small Penis</span>
-	<div class="meter">
-		<<set _percent=Math.floor(($insecurity_penis_small/1000)*100)>>
-		<<print '<div class="redbar" style="width:' + _percent + '%"></div>'>>
-	</div>
-	<<if $acceptance_penis_small gte 1 and $acceptance_penis_small lte 999 and $penissize is 1>>
-		<span class="green">Acceptance: Small Penis</span>
-		<div class="meter">
-			<<set _percent=Math.floor(($acceptance_penis_small/1000)*100)>>
-			<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
-		</div>
-	<</if>>
-<</if>>
-<<if $player.gender is "m">>
-	<<if $insecurity_penis_big gte 1 and $penissize gte 4 and $acceptance_penis_big lte 999>>
-		<span class="red">Insecurity: Enormous Penis</span>
-		<div class="meter">
-			<<set _percent=Math.floor(($insecurity_penis_big/1000)*100)>>
-			<<print '<div class="redbar" style="width:' + _percent + '%"></div>'>>
-		</div>
-		<<if $acceptance_penis_big gte 1 and $acceptance_penis_big lte 999 and $penissize gte 4>>
-			<span class="green">Acceptance: Big Penis</span>
-			<div class="meter">
-				<<set _percent=Math.floor(($acceptance_penis_big/1000)*100)>>
-				<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
-			</div>
-		<</if>>
-	<</if>>
-<<else>>
-	<<if $insecurity_penis_big gte 1 and $penissize gte 2 and $acceptance_penis_big lte 999>>
-		<span class="red">Insecurity: Enormous Penis</span>
-		<div class="meter">
-			<<set _percent=Math.floor(($insecurity_penis_big/1000)*100)>>
-			<<print '<div class="redbar" style="width:' + _percent + '%"></div>'>>
-		</div>
-		<<if $acceptance_penis_big gte 1 and $acceptance_penis_big lte 999 and $penissize gte 2>>
-			<span class="green">Acceptance: Big Penis</span>
-			<div class="meter">
-				<<set _percent=Math.floor(($acceptance_penis_big/1000)*100)>>
-				<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
-			</div>
-		<</if>>
-	<</if>>
-<</if>>
-<<if $insecurity_breasts_tiny gte 1 and $breastsize lte 0 and $player.gender is "f" and $acceptance_breasts_tiny lte 999>>
-	<span class="red">Insecurity: Flat Chest</span>
-	<div class="meter">
-		<<set _percent=Math.floor(($insecurity_breasts_tiny/1000)*100)>>
-		<<print '<div class="redbar" style="width:' + _percent + '%"></div>'>>
-	</div>
-	<<if $acceptance_breasts_tiny gte 1 and $acceptance_breasts_tiny lte 999 and $breastsize lte 0 and $player.gender is "f">>
-		<span class="green">Acceptance: Tiny Breasts</span>
-		<div class="meter">
-			<<set _percent=Math.floor(($acceptance_breasts_tiny/1000)*100)>>
-			<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
-		</div>
-	<</if>>
-<</if>>
-<<if $insecurity_breasts_small gte 1 and $breastsize gte 1 and $breastsize lte 5 and $acceptance_breasts_small lte 999>>
-	<span class="red">Insecurity: Small Breasts</span>
-	<div class="meter">
-		<<set _percent=Math.floor(($insecurity_breasts_small/1000)*100)>>
-		<<print '<div class="redbar" style="width:' + _percent + '%"></div>'>>
-	</div>
-	<<if $acceptance_breasts_small gte 1 and $acceptance_breasts_small lte 999 and $breastsize gte 1 and $breastsize lte 5>>
-		<span class="green">Acceptance: Small Breasts</span>
-		<div class="meter">
-			<<set _percent=Math.floor(($acceptance_breasts_small/1000)*100)>>
-			<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
-		</div>
-	<</if>>
-<</if>>
-<<if $player.gender is "f">>
-	<<if $insecurity_breasts_big gte 1 and $breastsize gte 8 and $acceptance_breasts_big lte 999>>
-	<span class="red">Insecurity: Huge Breasts</span>
-		<div class="meter">
-			<<set _percent=Math.floor(($insecurity_breasts_big/1000)*100)>>
-			<<print '<div class="redbar" style="width:' + _percent + '%"></div>'>>
-		</div>
-		<<if $acceptance_breasts_big gte 1 and $acceptance_breasts_big lte 999 and $breastsize gte 8>>
-			<span class="green">Acceptance: Big Breasts</span>
-			<div class="meter">
-				<<set _percent=Math.floor(($acceptance_breasts_big/1000)*100)>>
-				<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
-			</div>
-		<</if>>
-	<</if>>
-<<else>>
-	<<if $insecurity_breasts_big gte 1 and $breastsize gte 6 and $acceptance_breasts_big lte 999>>
-		<span class="red">Insecurity: Huge Breasts</span>
-		<div class="meter">
-			<<set _percent=Math.floor(($insecurity_breasts_big/1000)*100)>>
-			<<print '<div class="redbar" style="width:' + _percent + '%"></div>'>>
-		</div>
-		<<if $acceptance_breasts_big gte 1 and $acceptance_breasts_big lte 999 and $breastsize gte 6>>
-			<span class="green">Acceptance: Big Breasts</span>
-			<div class="meter">
-				<<set _percent=Math.floor(($acceptance_breasts_big/1000)*100)>>
-				<<print '<div class="greenbar" style="width:' + _percent + '%"></div>'>>
-			</div>
-		<</if>>
-	<</if>>
-<</if>>
-
-<br>
 
 <</widget>>

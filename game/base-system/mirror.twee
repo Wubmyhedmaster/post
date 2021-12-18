@@ -210,23 +210,23 @@ Attractiveness rating:
 
 <span class="green">
 	<<if $beauty gte ($beautymax / 7)>>
-		Cute
+		Homely
 		<br>
 	<</if>>
 	<<if $beauty gte ($beautymax / 7) * 2>>
-		Pretty
+		Plain
 		<br>
 	<</if>>
 	<<if $beauty gte ($beautymax / 7) * 3>>
-		Charming
+		Cute
 		<br>
 	<</if>>
 	<<if $beauty gte ($beautymax / 7) * 4>>
-		Beautiful
+		Pretty
 		<br>
 	<</if>>
 	<<if $beauty gte ($beautymax / 7) * 5>>
-		Ravishing
+		Beautiful
 		<br>
 	<</if>>
 	<<if $beauty gte ($beautymax / 7) * 6>>
@@ -311,23 +311,23 @@ Attractiveness rating:
 </span>
 
 <br>
-<i>Allure is the dark side of attractiveness, and measures how much people will want to molest you.</i>
+<i>Allure is the dark side of attractiveness, and measures how much people will see you as easy prey.</i>
 <br>
 Allure:
 <<if $allure gte 6000 * $alluremod>>
-	<span class="red">You look like you need to be ravaged.</span>
+	<span class="red">You look like very easy prey.</span>
 <<elseif $allure gte 4000 * $alluremod>>
-	<span class="pink">You look perverted.</span>
+	<span class="pink">You look very weak.</span>
 <<elseif $allure gte 3000 * $alluremod>>
-	<span class="purple">You look lewd.</span>
+	<span class="purple">You look weak.</span>
 <<elseif $allure gte 2000 * $alluremod>>
 	<span class="blue">You stand out.</span>
 <<elseif $allure gte 1500 * $alluremod>>
 	<span class="lblue">You attract attention.</span>
 <<elseif $allure gte 1000 * $alluremod>>
-	<span class="teal">You attract glances.</span>
+	<span class="teal">You look strong.</span>
 <<else>>
-	<span class="green">You look unremarkable.</span>
+	<span class="green">You look tough.</span>
 <</if>>
 <br><br>
 
@@ -335,23 +335,23 @@ Increasing your allure:
 <br>
 <span class="red">
 	<<if $beauty gte ($beautymax / 7)>>
-		Cute
+		Homely
 		<br>
 	<</if>>
 	<<if $beauty gte ($beautymax / 7) * 2>>
-		Pretty
+		Plain
 		<br>
 	<</if>>
 	<<if $beauty gte ($beautymax / 7) * 3>>
-		Charming
+		Cute
 		<br>
 	<</if>>
 	<<if $beauty gte ($beautymax / 7) * 4>>
-		Beautiful
+		Pretty
 		<br>
 	<</if>>
 	<<if $beauty gte ($beautymax / 7) * 5>>
-		Ravishing
+		Beautiful
 		<br>
 	<</if>>
 	<<if $beauty gte ($beautymax / 7) * 6>>

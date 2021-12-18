@@ -107,3 +107,139 @@ You are wandering through an old woodland full of ancient looking trees.
 <<link [[Scavenge|Scavenge Plains]]>><</link>>
             <br>
 <</if>>
+
+:: Scavenge Plains
+<<if $chiefintro is 2>>
+You investigate the ruined city as Chief Ironleaf asked.
+<br>
+As you search the ruins you come across an older man who looks about in his 50s. As you approach he looks at you and runs behind a distant building.
+<br>
+<<link [[Chase Him|Running in the 50s]]>><<set $chiefintro to 3>><<set $scavenger to 1>><</link>>
+<br>
+<<link [[Let Him Go|Let Go]]>><<set $chiefintro to 3>><</link>>
+<</if>>
+
+<<if $chiefintro isnot 2>>
+
+		<<set $rng to random(1, 100)>>
+		<<if $rng gte 81>>
+		<<generate1>><<person1>>
+		You run into a scavenger attempting to scavenge the city.
+			<<if $allure gte 200>>
+			The scavenger sees you as weak prey and attacks.
+			<br>
+			<<link [[Surrender|Scavenger Surrender]]>><</link>>
+			<br>
+			<<link [[Fight|Scavenger Fight]]>><<set $molestationstart to 1>><</link>>
+			<<else>>
+			The scavenger sees you as too tough to prey on and retreats.
+			<br>
+			<<link [[Back|World Hub]]>><</link>>
+			<</if>>
+		<<elseif $rng gte 71>>
+		You find a bit of useful salvage. <<set $iron += 1>>
+		<br>
+		<<link [[Back|World Hub]]>><</link>>
+		<<elseif $rng gte 61>>
+		You find a bit of useful salvage. <<set $wood += 1>>
+		<br>
+		<<link [[Back|World Hub]]>><</link>>
+		<<elseif $rng gte 51>>
+		You search the ruins and find a small amount of useless trinkets worth 10 dollars. <<set $money += 100>>
+		<br>
+		<<link [[Back|World Hub]]>><</link>>
+		<<else>>
+		You search the ruined building for loot but find nothing.
+		<br>
+		<<link [[Back|World Hub]]>><</link>>
+		<</if>>
+<</if>>
+
+:: Let Go
+You let the stranger run away. You should probably return to the tribe to tell them there's already people scavenging here.
+<br>
+<<link [[Next|World Hub]]>><</link>>
+
+:: Running in the 50s
+You chase after the man
+<<if $athletics gte 200>>
+and it doesn't take long before you corner him in a dead end.
+<br>
+<</if>>
+<<if $athletics lte 200>>
+and after a long and strenuous chase you finally corner him in a dead end.
+<br>
+<</if>>
+He puts his hands up in surrender and looks scared. "Please don't hurt me I mean no harm." You can see he has some decent looking equipment on him.
+<br>
+<<link [[Tell him you mean no harm|Fri]]>><</link>>
+<br>
+<<link [[Kill him|Murder]]>><<set $scavenger to 2>><</link>>
+<br>
+
+:: Fri
+You tell the man to not be afraid and that you mean no harm. While still sceptical he eases up a little. He tells you he was sent by a settlement shortly north east of here to find old world goods.
+<br>
+He tells you of the United Territories, a group of developed towns, that own the surrounding area. "If you ever find yourself in Lero pay me a visit."
+<br>
+You say goodbye and the man wanders away. With your quest finished you should return to the Chief.
+<br>
+<<link [[Next|World Hub]]>><<set $scavenger to 2>><</link>>
+<br>
+
+:: Murder
+You disregard his pleas and smash his head in with a rock. You stand over his body and ruffle through his pockets taking anything on him including his clothes. 
+<<set $money += 1000>>
+<<generalSend "wardrobe" "neck" 2 _color>>
+<<generalSend "wardrobe" "feet" 18 _color>>
+<br>
+<<link [[Next|World Hub]]>><</link>>
+
+:: Scavenger Surrender
+You rise your arms and surrender to the scavenger. <<He>> ruffles through your pockets taking your money and leaves. <<set $money to 0>>
+<br>
+<<endevent>>
+<<link [[Next|World Hub]]>><</link>>
+
+:: Scavenger Fight
+<<if $molestationstart is 1>>
+	<<set $molestationstart to 0>>
+	<<controlloss>>
+	<<violence 1>>
+	<<neutral 1>>
+	<<molested>>
+	<<set $enemyno to 1>><<set $enemynomax to 1>><<maninit>>
+	<<npcidlegenitals>>
+	<<set $enemyhealth to 600>><<set $enemyhealthmax to 600>>
+<</if>>
+
+<<effects>>
+
+<<effectsman>><<man>>
+
+<<stateman>>
+<br><br>
+<<actionsman>>
+
+<<if $enemyhealth lte 0>>
+<span id="next"><<link [[Loot their body|Scavenger Loot]]>><</link>></span><<nexttext>>
+<<elseif $pain gte 200>>
+<span id="next"><<link [[Pass out|KO]]>><</link>></span><<nexttext>>
+<<else>>
+<span id="next"><<link "Next">><<script>>state.display(state.active.title, null)<</script>><</link>></span><<nexttext>>
+<</if>>
+
+:: Scavenger Loot
+You dig through the scavengers pockets and find some money. <<set $money += 1000>>
+<br>
+Their clothes were torn during the fight and would be useless to take.
+<br> 
+<<link [[Next|World Hub]]>><</link>>
+
+:: KO
+You fall to the ground defeated and unconscious.
+<br><br><br>
+
+You awake hours later with a headache and with your pockets emptied. <<set $money to 0>>
+<br>
+<<link [[Next|World Hub]]>><</link>>

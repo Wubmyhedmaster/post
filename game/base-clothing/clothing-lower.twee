@@ -2622,7 +2622,7 @@
 	accIcon: 0
 },
 
-	{index: 58,
+{index: 58,
 	name: "skinsuit bottom",
 	name_cap: "skinsuit bottom",
 	variable: "skinsuit",
@@ -2649,7 +2649,7 @@
 	anus_exposed: 0,
 	anus_exposed_base: 0,
 	type: ["swim", "diving"],
-	set: "diving",
+	set: "skinsuit",
 	gender: "n",
 	femininity: 0,
 	warmth: 40,
@@ -2665,7 +2665,7 @@
 	location: 0,
 	iconFile: 0,
 	accIcon: 0,
-	outfitSecondary: ["upper","diving suit"]
+	outfitSecondary: ["upper","skinsuit"]
 },
 
 	{index: 59,

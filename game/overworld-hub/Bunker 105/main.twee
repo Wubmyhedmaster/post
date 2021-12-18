@@ -24,11 +24,11 @@ This work of fiction contains content of a violent nature and is inappropriate f
 Save files are stored in your browser's cache. Save to file or text in the "Export/Import" tab in "Saves" to avoid losing them.
 <br><br>
 
-<<set $settingsExitPassage to "Start2">>
+<<set $settingsExitPassage to "Start3">>
 <<initsettings>>
 <<settings>>
 
-:: Start2
+:: Start3
 
 <<variablesStart2>>
 <<effects>>
@@ -53,6 +53,10 @@ You awaken in the metal coffin your government calls a bunker. As per usual ther
 <<set $chiefintro to 0>>
 
 <<set $city to 0>>
+
+<<if $worn.neck.name is "armoredcoat">>
+<<set $pain -= 1>>
+<</if>>
 
 <<link [[Get Up|Bedroom]]>><</link>>
 
