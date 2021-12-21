@@ -286,6 +286,36 @@
 	mainImage:0,
 	leftImage:1,
 	rightImage:1
+},
+
+	{index: 9,
+	name: "best sword",
+	name_cap: "Best Sword",
+	variable: "bestsword",
+	integrity: 200,
+	integrity_max: 200,
+	fabric_strength: 20,
+	reveal: 100,
+	word: "n",
+	plural: 1,
+	colour: 0,
+	colour_options: [],
+	type: ["weapon"],
+	gender: "n",
+	warmth: 0,
+	cost: 1000,
+	description: "The best money can buy?",
+	shop: ["forest"],
+	accessory: 0,
+	accessory_colour: 0,
+	accessory_colour_options: [],
+	back_img: 0,
+	cursed: 0,
+	location: 0,
+	accIcon: "",
+	mainImage:0,
+	leftImage:0,
+	rightImage:1
 }
 
 ]>>

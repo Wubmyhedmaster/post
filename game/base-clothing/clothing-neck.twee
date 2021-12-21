@@ -84,6 +84,7 @@
 	accessory: 0,
 	accessory_colour: 0,
 	accessory_colour_options: [],
+	sleeve_img: 1,
 	cursed: 0,
 	location: 0,
 	accIcon: 0

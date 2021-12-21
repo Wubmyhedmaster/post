@@ -208,7 +208,8 @@ You say goodbye and the <<personsimple>> wanders away. With your quest finished 
 <<person1>><<npc "Greene">>
 You disregard <<his>> pleas and smash <<his>> head in with a rock. You stand over <<his>> body and ruffle through <<his>> pockets taking anything on <<him>> including <<his>> clothes. 
 <<set $money += 1000>>
-<<generalSend "wardrobe" "neck" 2 _color>>
+<<generalSend "wardrobe" "upper" 89 _color>>
+<<generalSend "wardrobe" "lower" 22 _color>>
 <<generalSend "wardrobe" "feet" 18 _color>>
 <br>
 <<endevent>>
@@ -229,7 +230,7 @@ You rise your arms and surrender to the scavenger. <<He>> ruffles through your p
 	<<molested>>
 	<<set $enemyno to 1>><<set $enemynomax to 1>><<maninit>>
 	<<npcidlegenitals>>
-	<<set $enemyhealth to 600>><<set $enemyhealthmax to 600>>
+	<<npcspank>>
 <</if>>
 
 <<effects>>

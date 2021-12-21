@@ -58,8 +58,14 @@ You awaken in the metal coffin your government calls a bunker. As per usual ther
 
 <<set $wood to 0>>
 
-<<if $worn.neck.name is "armoredcoat">>
-<<set $pain -= 1>>
+<<set $unarmed to 0>>
+
+<<set $melee to 0>>
+
+<<set $guns to 0>>
+
+<<if $worn.upper.name is "leathercoat">>
+<<set $pain -= 2>>
 <</if>>
 
 <<link [[Get Up|Bedroom]]>><</link>>

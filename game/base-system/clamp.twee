@@ -86,6 +86,10 @@
 <<set $athletics to Math.clamp($athletics, 0, 1000)>>
 <<set $tending to Math.clamp($tending, 0, 1000)>>
 
+<<set $unarmed to Math.clamp($unarmed, 0, 1000)>>
+<<set $melee to Math.clamp($melee, 0, 1000)>>
+<<set $guns to Math.clamp($guns, 0, 1000)>>
+
 <<set $enemyanger to Math.clamp($enemyanger, 0, 200)>>
 <<set $audienceexcitement to Math.clamp($audienceexcitement, 0, 100)>>
 <<set $audiencearousal to Math.clamp($audiencearousal, 0, 100)>>

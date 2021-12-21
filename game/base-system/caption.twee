@@ -62,20 +62,6 @@
 			<br><br>
 		<</if>>
 	<</if>>
-	<<if !$lessonmissedtext>>
-	<<else>>
-		<<if $lessonmissedtext is 1>>
-			<span class="pink">You missed a lesson yesterday.</span>
-		<<elseif $lessonmissedtext gte 2>>
-			<span class="pink">You missed $lessonmissedtext lessons yesterday.</span>
-		<</if>>
-		<<if $lessonmissed gte 50>>
-			<span class="red">You've missed many lessons. The police have been informed.</span>
-			<<crimeup 25>>
-		<</if>>
-		<<set $lessonmissedtext to 0>>
-		<br>
-	<</if>>
 	<<if $images is 1>>
 		<div id="stats" @class="($extendedStats ? 'statsExtended' : '')" onclick="extendStats()">
 			<<statsCaption>>
@@ -829,7 +815,7 @@ Your $worn.under_upper.name <<underupperhas>> been pulled to your $worn.under_up
 <<widget "statsCaption">>
 	<<if $dev is 1>>
 		<<set $money = Math.trunc($money)>>
-		£<<print ($money / 100)>>.
+		$<<print ($money / 100)>>.
 	<<else>>
 		<<printmoney $money true>>
 	<</if>>

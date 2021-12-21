@@ -224,20 +224,6 @@ You have a <<skincolourtext>> <<if $breastsize gte 1>>You have <<breasts>>.<</if
 		<!--Core skill configurations-->
 		<<silently>>
 
-			<!--Perception-->
-			<<set _perceptionConfig = { name : "Perception", icon : _purityIcon, displayType : "level", currentValue : $purity, modifier: 100,
-				states : [
-					{ requiredValue: 0, 	level: 0, color: 'red',		description: 'You are almost entirely blind.'},
-					{ requiredValue: 1, 	level: 1, color: 'red',		description: 'You need glasses.'},
-					{ requiredValue: 500, 	level: 2, color: 'pink',	description: 'Your senses occasionally blur.'},
-					{ requiredValue: 600, 	level: 3, color: 'purple',	description: 'You have issues finding stuff that are hidden.'},
-					{ requiredValue: 700, 	level: 4, color: 'blue',	description: 'You have typical senses.'},
-					{ requiredValue: 800, 	level: 5, color: 'lblue',	description: 'Your senses are quite better than the average man.'},
-					{ requiredValue: 900, 	level: 6, color: 'teal',	description: "You have the eyes of a hawk."},
-					{ requiredValue: 1000,	level: 7, color: 'green',	description: 'You can sense anything around you.'}
-				]
-			}>>
-
 			<!--AWARENESS-->
 			<<set _awarenessConfig = { name : "Awareness", icon : _purityIcon, displayType : "level", currentValue : $awareness, modifier: 100,
 				states : [
@@ -318,27 +304,12 @@ You have a <<skincolourtext>> <<if $breastsize gte 1>>You have <<breasts>>.<</if
 					{ requiredValue: ($beautymax / 7) * 6, 	level: 6, color: 'green',	description: 'Your beauty is divine.'}
 				]
 			}>>
-
-			<!--CHARISMA-->
-			<<set _charismaConfig = { name : "Charisma", icon : _purityIcon, displayType : "level", currentValue : $charisma, maxValue: 100, modifier: 100,
-				states : [
-					{ requiredValue: 0,		level: 0, color: 'green',	description: 'You lack even an ounce of charisma.'},
-					{ requiredValue: 1,		level: 1, color: 'teal',	description: 'You have the charisma of an old hermit.'},
-					{ requiredValue: 15, 	level: 2, color: 'lblue',	description: 'You are as charismatic as a substitute teacher.'},
-					{ requiredValue: 35, 	level: 3, color: 'blue',	description: 'You have the skills of a diplomat.'},
-					{ requiredValue: 55, 	level: 4, color: 'purple',	description: 'If you were in the old world you would be a movie star.'},
-					{ requiredValue: 75, 	level: 5, color: 'pink',	description: 'You have the charisma to become a cult leader.'},
-					{ requiredValue: 95, 	level: 6, color: 'red',		description: 'Your charisma matches that of even the rulers.'}
-				]
-			}>>
 		<</silently>>
 
 		<<characteristic-box _awarenessConfig>>
 		<<characteristic-box _beautyConfig>>
 		<<characteristic-box _physiqueConfig>>
-		<<characteristic-box _willpowerConfig>>
-		<<characteristic-box _perceptionConfig>>
-		<<characteristic-box _charismaConfig>>		
+		<<characteristic-box _willpowerConfig>>	
 	</div>
 
 	<!--Common states for skills with grades-->
@@ -523,9 +494,9 @@ You have a <<skincolourtext>> <<if $breastsize gte 1>>You have <<breasts>>.<</if
 <h4>Weapon skills</h4>
 	<div id="prof" class="characteristic-box-list">
 		<<silently>>
-			<<set _gunsConfig = 		{ name : "Guns", 		displayType : "grade",	currentValue : $prof.guns, 		modifier: 100,		states : _basicSkillGrades}>>
-			<<set _meleeConfig = 		{ name : "Melee", 		displayType : "grade",	currentValue : $prof.melee, 		modifier: 100,		states : _basicSkillGrades}>>
-			<<set _unarmedConfig = 		{ name : "Unarmed", 		displayType : "grade",	currentValue : $prof.unarmed, 		modifier: 100,		states : _basicSkillGrades}>>
+			<<set _gunsConfig = 		{ name : "Guns", 		displayType : "grade",	currentValue : $guns,	modifier: 100,	states : _detailedSkillGrades}>>
+			<<set _meleeConfig = 		{ name : "Melee", 		displayType : "grade",	currentValue : $melee,	modifier: 100,	states : _detailedSkillGrades}>>
+			<<set _unarmedConfig = 		{ name : "Unarmed", 		displayType : "grade",	currentValue : $unarmed,	modifier: 100,	states : _detailedSkillGrades}>>
 		<</silently>>
 		<<characteristic-box _gunsConfig>>
 		<<characteristic-box _meleeConfig>>

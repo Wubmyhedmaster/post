@@ -2,13 +2,23 @@
 
 <<widget "inventory">>
 
-<<if $wood gte 0>>
-You're carrying some planks of wood.
+<<if $wood is 1>>
+You're carrying a plank of wood.
 <br>
 <</if>>
 
-<<if $iron gte 0>>
-You're carrying some iron slag.
+<<if $iron is 1>>
+You're carrying an iron slag chunk.
+<br>
+<</if>>
+
+<<if $wood gt 1>>
+You're carrying <<print $wood>> wood planks.
+<br>
+<</if>>
+
+<<if $iron gt 1>>
+You're carrying <<print $iron>> iron slag chunks.
 <br>
 <</if>>
 

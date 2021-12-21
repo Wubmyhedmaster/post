@@ -621,6 +621,22 @@
 			<<sadism $args[0]>>
 		<</if>>
 		<<set _thedamage to (2 * _defiance * ($physique / 4000))>>
+		<<if $worn.hands.name is "naked">>
+		<<set _combat = $unarmed>>
+		<</if>>
+		<<if $worn.hands.name is "bestsword">>
+		<<set _combat = $melee>>
+		<</if>>
+		<<set _combatmin = Math.clamp(_combat - 200, 1, 2000)>>
+		<<set _combatmax = Math.clamp(_combat + 100, 1, 2000)>>
+		<<if $combatSuccess == 1>>
+			<<if $worn.hands.name is "naked">>
+			<<set _damage += (2 * _defiance * ($unarmed / 180))>>
+			<</if>>
+			<<if $worn.hands.name is "bestsword">>
+			<<set _damage += (2 * _defiance * ($melee / 160))>>
+			<</if>>
+		<</if>>
 		<<set $enemyhealth -= _thedamage>>
 		<<if $args[1] isnot undefined>>
 			<<if $args[2] isnot undefined>>
@@ -649,6 +665,18 @@
 				<</if>>
 			<</for>>
 		<</if>>
+	<</if>>
+<</widget>>
+
+<<widget "unarmedskilluse">>
+	<<if $enemyhealthmax lt 100000 and $unarmed lt 1000 and $worn.hands.name is "naked">>
+			<<set $unarmed += 1>>
+	<</if>>
+<</widget>>
+
+<<widget "meleeskilluse">>
+	<<if $enemyhealthmax lt 100000 and $melee lt 1000 and $worn.hands.name is "best sword">>
+			<<set $melee += 1>>
 	<</if>>
 <</widget>>
 

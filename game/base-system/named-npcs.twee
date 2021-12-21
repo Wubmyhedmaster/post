@@ -1071,6 +1071,8 @@ alternative way to write that:
 			<<else>>
 			$npctextname thinks you're <span class="red">terrible.</span>
 			<</if>>
+		<<elseif $death is 1>>
+			$npctextname has been <span class="red">murdered.</span>
 		<<else>>
 			<<if $npctextdom gte $npcdomhigh>>
 			$npctextname thinks you're <span class="pink">cute.</span>
